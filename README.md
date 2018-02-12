@@ -38,7 +38,7 @@ The app has basic features just to test the tools in the project
 ### `classnames`
 For using CSS Modules inside components. See [bind](https://www.npmjs.com/package/classnames#alternate-bind-version-for-css-modules-)
 
-### `react` `react-dom`
+### **react** **react-dom**
 React development
 
 ## Modules (for development)

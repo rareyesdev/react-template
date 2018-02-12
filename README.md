@@ -10,6 +10,7 @@ The app has basic features just to test the tools in the project
 
 - [react-template](#react-template)
   * [Description](#description)
+  * [Table of Contents](#table-of-contents)
   * [Modules](#modules)
     + [`classnames`](#classnames)
     + [`react` `react-dom`](#react-react-dom)
@@ -31,6 +32,10 @@ The app has basic features just to test the tools in the project
     + [`webpack-bundle-analyzer`](#webpack-bundle-analyzer)
     + [`webpack-dev-server`](#webpack-dev-server)
   * [Notes](#notes)
+    + [`extract-text-webpack-plugin`](#extract-text-webpack-plugin-1)
+    + [Source Maps](#SourceMaps)
+  * [Contribution Guidelines](#contribution-guidelines)
+    + [README.md](#readmemd)
 
 ## Modules
 
@@ -94,6 +99,9 @@ For running the app in development with hot reloading
 
 ### `extract-text-webpack-plugin`
 No fallback is used here because we want the CSS file in all environments. Sometimes this is disabled in `development` (becausse its faster not to do it) and `style-loader` is used instead. this is explained [here](https://stackoverflow.com/questions/43403603/why-is-style-loader-used-as-a-fallback-with-webpacks-extractsass-plugin)
+
+### Source Maps
+`devtool: 'inline-source-map'` in `webpack.config.js` is responsible for enabling source maps. This way we get nice error messages pointing to the real file and not the bundled file
 
 ## Contribution Guidelines
 

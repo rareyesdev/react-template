@@ -81,6 +81,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
+  devtool: 'inline-source-map',
   devServer: {
     contentBase: path.resolve('dist')
   }

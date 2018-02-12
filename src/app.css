@@ -1,7 +1,7 @@
 .component {
   height: 600px;
   color: white;
-  background-image: url('./images/backgrounds/main-background.jpg');
+  background-image: url('./assets/images/backgrounds/main-background.jpg');
 }
 
 .name-section {
@@ -14,5 +14,5 @@
 }
 
 .bookmark-icon:before {
-  content: url('./images/icons/bookmark.svg');
+  content: url('./assets/images/icons/bookmark.svg');
 }

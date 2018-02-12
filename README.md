@@ -99,3 +99,5 @@ No fallback is used here because we want the CSS file in all environments. Somet
 
 ### README.md
 Use [markdown-toc](https://github.com/jonschlinkert/markdown-toc#cli) to update TOC
+
+In the project root folder execute: `markdown-toc README.md`

@@ -6,6 +6,33 @@ This project is meant to contain basic setup for a react applications
 
 The app has basic features just to test the tools in the project
 
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [react-template](#)
+	- [Description](#)
+	- [Modules](#)
+		- [classnames](#)
+		- [react react-dom](#)
+	- [Modules (for development)](#)
+		- [babel-core](#)
+		- [babel-eslint](#)
+		- [babel-loader](#)
+		- [babel-preset-es2015 babel-preset-react babel-preset-stage-0](#)
+		- [cross-env](#)
+		- [css-loader](#)
+		- [del-cli](#)
+		- [eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react](#)
+		- [extract-text-webpack-plugin](#)
+		- [file-loader](#)
+		- [html-webpack-plugin](#)
+		- [postcss-cssnext](#)
+		- [postcss-loader](#)
+		- [webpack](#)
+		- [webpack-bundle-analyzer](#)
+		- [webpack-dev-server](#)
+	- [Notes](#)
+		- [extract-text-webpack-plugin](#)
+
 ## Modules
 
 ### `classnames`

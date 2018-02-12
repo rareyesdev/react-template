@@ -63,3 +63,8 @@ Display statistics over a webpack bundle
 
 ### `webpack-dev-server`
 For running the app in development with hot reloading
+
+## Notes
+
+### `extract-text-webpack-plugin`
+No fallback is used here because we want the CSS file in all environments. Sometimes this is disabled in `development` (becausse its faster not to do it) and `style-loader` is used instead. this is explained [here](https://stackoverflow.com/questions/43403603/why-is-style-loader-used-as-a-fallback-with-webpacks-extractsass-plugin)

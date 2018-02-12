@@ -110,6 +110,8 @@ No fallback is used here because we want the CSS file in all environments. Somet
 ## Contribution Guidelines
 
 ### README.md
-Use [markdown-toc](https://github.com/jonschlinkert/markdown-toc#cli) to update TOC
+Use [Markdown TOC](https://marketplace.visualstudio.com/items?itemName=AlanWalk.markdown-toc) Visual Studio Code extension
 
-In the project root folder execute: `markdown-toc README.md`
+Old method (only for reference):
+> Use [markdown-toc](https://github.com/jonschlinkert/markdown-toc#cli) to update TOC
+> In the project root folder execute: `markdown-toc README.md`

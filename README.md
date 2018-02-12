@@ -6,6 +6,32 @@ This project is meant to contain basic setup for a react applications
 
 The app has basic features just to test the tools in the project
 
+## Table of Contents
+
+- [react-template](#react-template)
+  * [Description](#description)
+  * [Modules](#modules)
+    + [`classnames`](#classnames)
+    + [`react` `react-dom`](#react-react-dom)
+  * [Modules (for development)](#modules-for-development)
+    + [`babel-core`](#babel-core)
+    + [`babel-eslint`](#babel-eslint)
+    + [`babel-loader`](#babel-loader)
+    + [`babel-preset-es2015` `babel-preset-react` `babel-preset-stage-0`](#babel-preset-es2015-babel-preset-react-babel-preset-stage-0)
+    + [`cross-env`](#cross-env)
+    + [`css-loader`](#css-loader)
+    + [`del-cli`](#del-cli)
+    + [`eslint` `eslint-config-airbnb` `eslint-plugin-import` `eslint-plugin-jsx-a11y` `eslint-plugin-react`](#eslint-eslint-config-airbnb-eslint-plugin-import-eslint-plugin-jsx-a11y-eslint-plugin-react)
+    + [`extract-text-webpack-plugin`](#extract-text-webpack-plugin)
+    + [`file-loader`](#file-loader)
+    + [`html-webpack-plugin`](#html-webpack-plugin)
+    + [`postcss-cssnext`](#postcss-cssnext)
+    + [`postcss-loader`](#postcss-loader)
+    + [`webpack`](#webpack)
+    + [`webpack-bundle-analyzer`](#webpack-bundle-analyzer)
+    + [`webpack-dev-server`](#webpack-dev-server)
+  * [Notes](#notes)
+
 ## Modules
 
 ### `classnames`

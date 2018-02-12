@@ -10,6 +10,7 @@ The app has basic features just to test the tools in the project
 
 - [react-template](#react-template)
   * [Description](#description)
+  * [Table of Contents](#table-of-contents)
   * [Modules](#modules)
     + [`classnames`](#classnames)
     + [`react` `react-dom`](#react-react-dom)
@@ -31,6 +32,9 @@ The app has basic features just to test the tools in the project
     + [`webpack-bundle-analyzer`](#webpack-bundle-analyzer)
     + [`webpack-dev-server`](#webpack-dev-server)
   * [Notes](#notes)
+    + [`extract-text-webpack-plugin`](#extract-text-webpack-plugin-1)
+  * [Contribution Guidelines](#contribution-guidelines)
+    + [README.md](#readmemd)
 
 ## Modules
 

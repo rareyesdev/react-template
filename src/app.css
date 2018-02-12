@@ -1,0 +1,18 @@
+.component {
+  height: 600px;
+  color: white;
+  background-image: url('./images/backgrounds/main-background.jpg');
+}
+
+.name-section {
+  color: red;
+  background: white;
+
+  & .person-name {
+    color: blue;
+  }
+}
+
+.bookmark-icon:before {
+  content: url('./images/icons/bookmark.svg');
+}

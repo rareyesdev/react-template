@@ -58,6 +58,12 @@ module.exports = {
           'file-loader'
         ],
         exclude: /node_modules/
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          'file-loader'
+        ]
       }
     ]
   },

@@ -25,6 +25,9 @@ class App extends React.Component {
           {name && '-> Hello '}
           {name && <span className={cx('person-name')}>{name}</span>}
         </div>
+        <div className={cx('with-nice-font')}>
+          This is some text with a nice custom font
+        </div>
       </div>
     );
   }

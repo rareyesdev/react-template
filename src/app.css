@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'IndieFlower';
+  src:  url('./assets/fonts/IndieFlower.ttf') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
 .component {
   height: 600px;
   color: white;
@@ -15,4 +22,9 @@
 
 .bookmark-icon:before {
   content: url('./assets/images/icons/bookmark.svg');
+}
+
+.with-nice-font {
+  font-family: 'IndieFlower';
+  font-size: 40px;
 }

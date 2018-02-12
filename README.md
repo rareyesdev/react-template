@@ -33,7 +33,7 @@ The app has basic features just to test the tools in the project
     + [`webpack-dev-server`](#webpack-dev-server)
   * [Notes](#notes)
     + [`extract-text-webpack-plugin`](#extract-text-webpack-plugin-1)
-    + [Source Maps](#SourceMaps)
+    + [Source Maps](#source-maps)
   * [Contribution Guidelines](#contribution-guidelines)
     + [README.md](#readmemd)
 

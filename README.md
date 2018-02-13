@@ -1,8 +1,13 @@
 # react-template
-Template for React projects
+
+<p align="center">
+<a href="https://travis-ci.org/ramonrf/react-template">
+<img src="https://travis-ci.org/ramonrf/react-template.svg?branch=develop" alt="Build Status">
+</a>
+</p>
 
 ## Description
-This project is meant to contain basic setup for a react applications
+This project is meant to contain basic setup for react applications
 
 The app has basic features just to test the tools in the project
 

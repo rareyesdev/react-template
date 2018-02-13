@@ -10,10 +10,13 @@
     "url": "https://github.com/ramonrf/react-template.git"
   },
   "scripts": {
-    "build": "npm run clean && cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.js",
-    "build-analyze": "cross-env ENABLE_BUNDLE_ANALYZER=true npm run build",
+    "build": "webpack --config ./webpack/webpack.config.js",
+    "build-dev": "npm run clean && cross-env NODE_ENV=development npm run build",
+    "build-prd": "npm run clean && cross-env NODE_ENV=production npm run build",
+    "build-analyze-dev": "cross-env ENABLE_BUNDLE_ANALYZER=true npm run build-dev",
+    "build-analyze-prd": "cross-env ENABLE_BUNDLE_ANALYZER=true npm run build-prd",
     "clean": "del-cli ./dist/*",
-    "start": "webpack-dev-server --config ./webpack/webpack.config.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.js",
     "lint": "eslint src --ext .jsx,.js",
     "test-no-lint": "del-cli ./.nyc_output/* && cross-env NODE_ENV=test nyc mocha --opts mocha.opts \"src/**/*.test.{js,jsx}\"",
     "test": "npm run lint && npm run test-no-lint"

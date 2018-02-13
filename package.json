@@ -5,6 +5,10 @@
   "main": "index.js",
   "author": "Ramon Alejandro Reyes Fajardo",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramonrf/react-template.git"
+  },
   "scripts": {
     "build": "npm run clean && cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.js",
     "build-analyze": "cross-env ENABLE_BUNDLE_ANALYZER=true npm run build",

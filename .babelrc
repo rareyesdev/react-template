@@ -1,5 +1,21 @@
 {
   "presets":[
     "env", "react" , "stage-0"
-  ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        ["istanbul", {
+          "useInlineSourceMaps": false,
+          "exclude": [
+             "**/*.test.js{,x}",
+             "webpack.config.js",
+             "coverage",
+             "dist",
+             "node_modules"
+          ]
+        }]
+      ]
+    }
+  }
 }

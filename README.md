@@ -107,6 +107,9 @@ No fallback is used here because we want the CSS file in all environments. Somet
 ### Source Maps
 `devtool: 'inline-source-map'` in `webpack.config.js` is responsible for enabling source maps. This way we get nice error messages pointing to the real file and not the bundled file
 
+### Eslint
+- Some rules are manually disabled in configuration files because they might cause issue with their respective parsers (example `eslint-disable comma-dangle` in webpack configuration file)
+
 ## Contribution Guidelines
 
 ### README.md

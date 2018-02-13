@@ -43,6 +43,7 @@ The app has basic features just to test the tools in the project
     - [`webpack`](#webpack)
     - [`webpack-bundle-analyzer`](#webpack-bundle-analyzer)
     - [`webpack-dev-server`](#webpack-dev-server)
+    - [`webpack-merge`](#webpack-merge)
   - [Notes](#notes)
     - [`extract-text-webpack-plugin`](#extract-text-webpack-plugin-1)
     - [Source Maps](#source-maps)
@@ -125,6 +126,9 @@ Display statistics over a webpack bundle
 
 ### `webpack-dev-server`
 For running the app in development with hot reloading
+
+### `webpack-merge`
+Merge webpack configuration with ease
 
 ## Notes
 

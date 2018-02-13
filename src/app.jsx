@@ -18,6 +18,7 @@ class App extends React.Component {
 
   render() {
     const { name } = this.state;
+    const env = process.env.NODE_ENV;
     return (
       <div className={cx('component')}>
         {"What's your name: "} <input type="text" onChange={this.onChange} value={name} />
@@ -31,6 +32,9 @@ class App extends React.Component {
         </div>
         <div>
           { usedFunction() }
+        </div>
+        <div>
+          NODE_ENV: {env}
         </div>
       </div>
     );

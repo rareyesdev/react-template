@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import { usedFunction } from './utils/unused-function';
 import styles from './app.css';
 
 const cx = classNames.bind(styles);
@@ -27,6 +28,9 @@ class App extends React.Component {
         </div>
         <div className={cx('with-nice-font')}>
           This is some text with a nice custom font
+        </div>
+        <div>
+          { usedFunction() }
         </div>
       </div>
     );

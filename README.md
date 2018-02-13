@@ -20,7 +20,7 @@ The app has basic features just to test the tools in the project
     - [`babel-core`](#babel-core)
     - [`babel-eslint`](#babel-eslint)
     - [`babel-loader`](#babel-loader)
-    - [`babel-preset-es2015` `babel-preset-react` `babel-preset-stage-0`](#babel-preset-es2015-babel-preset-react-babel-preset-stage-0)
+    - [`babel-preset-env` `babel-preset-react` `babel-preset-stage-0`](#babel-preset-env-babel-preset-react-babel-preset-stage-0)
     - [`cross-env`](#cross-env)
     - [`css-loader`](#css-loader)
     - [`del-cli`](#del-cli)
@@ -60,7 +60,7 @@ Needed for `eslint` to parse advanced `babel` constructions
 ### `babel-loader`
 Webpack loader for `.js` and `.jsx` files
 
-### `babel-preset-es2015` `babel-preset-react` `babel-preset-stage-0`
+### `babel-preset-env` `babel-preset-react` `babel-preset-stage-0`
 Presets for the transpiler to recognize modern ECMAScript constructions
 
 ### `cross-env`

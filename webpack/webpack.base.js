@@ -5,7 +5,6 @@ const path = require('path');
 const postCssCssNext = require('postcss-cssnext');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const enableWebpackBundlerAnalyzer = process.env.ENABLE_BUNDLE_ANALYZER ? 'server' : 'disabled';
 
@@ -81,15 +80,7 @@ const config = {
   ],
   resolve: {
     extensions: ['.js', '.jsx']
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: path.resolve('dist')
   }
 };
-
-if (process.env.NODE_ENV !== 'development') {
-  config.plugins.push(new UglifyJSPlugin());
-}
 
 module.exports = config;

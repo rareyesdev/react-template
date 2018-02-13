@@ -1,13 +1,21 @@
 {
   "presets":[
-    ["env", { "modules": false }],
+    ["env", { 
+      "targets": {
+        "browsers": ["last 2 versions", "> 5% in BE"],
+        "uglify": true
+      },
+      "modules": false 
+    }],
     ["react"],
     ["stage-0"]
   ],
   "env": {
     "test": {
       "presets":[
-        ["env"],
+        ["env", {
+          "node": "current"
+        }],
         ["react"],
         ["stage-0"]
       ],

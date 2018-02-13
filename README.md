@@ -20,7 +20,9 @@ The app has basic features just to test the tools in the project
     - [`babel-core`](#babel-core)
     - [`babel-eslint`](#babel-eslint)
     - [`babel-loader`](#babel-loader)
+    - [`babel-plugin-istanbul`](#babel-plugin-istanbul)
     - [`babel-preset-env` `babel-preset-react` `babel-preset-stage-0`](#babel-preset-env-babel-preset-react-babel-preset-stage-0)
+    - [`chai`](#chai)
     - [`cross-env`](#cross-env)
     - [`css-loader`](#css-loader)
     - [`del-cli`](#del-cli)
@@ -28,6 +30,8 @@ The app has basic features just to test the tools in the project
     - [`extract-text-webpack-plugin`](#extract-text-webpack-plugin)
     - [`file-loader`](#file-loader)
     - [`html-webpack-plugin`](#html-webpack-plugin)
+    - [`mocha`](#mocha)
+    - [`nyc`](#nyc)
     - [`postcss-cssnext`](#postcss-cssnext)
     - [`postcss-loader`](#postcss-loader)
     - [`webpack`](#webpack)
@@ -36,6 +40,7 @@ The app has basic features just to test the tools in the project
   - [Notes](#notes)
     - [`extract-text-webpack-plugin`](#extract-text-webpack-plugin-1)
     - [Source Maps](#source-maps)
+    - [Eslint](#eslint)
   - [Contribution Guidelines](#contribution-guidelines)
     - [README.md](#readmemd)
 
@@ -60,8 +65,14 @@ Needed for `eslint` to parse advanced `babel` constructions
 ### `babel-loader`
 Webpack loader for `.js` and `.jsx` files
 
+### `babel-plugin-istanbul`
+Add instrumenting code to ES6 source code. This is later used by a reporting service such as karma or mocha (through nyc)
+
 ### `babel-preset-env` `babel-preset-react` `babel-preset-stage-0`
 Presets for the transpiler to recognize modern ECMAScript constructions
+
+### `chai`
+Assertion framework. See `expect` usage in example tests
 
 ### `cross-env`
 For settings Node environment variables in a cross-platform manner
@@ -83,6 +94,12 @@ Webpack loader for files `(png|svg|jpg|gif)`
 
 ### `html-webpack-plugin`
 For creating `index.html` automatically from a template file and inject JS and CSS bundles
+
+### `mocha`
+Test runner
+
+### `nyc`
+Istanbul's state of the art command line interface. Reports code coverage in several formats
 
 ### `postcss-cssnext`
 Parser for [CssNext](http://cssnext.io/features/) syntax

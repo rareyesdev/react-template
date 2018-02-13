@@ -6,6 +6,11 @@
   ],
   "env": {
     "test": {
+      "presets":[
+        ["env"],
+        ["react"],
+        ["stage-0"]
+      ],
       "plugins": [
         ["istanbul", {
           "useInlineSourceMaps": false,

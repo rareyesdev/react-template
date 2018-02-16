@@ -19,31 +19,32 @@ The app has basic features just to test the tools in the project
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Modules](#modules)
-    - [`classnames`](#classnames)
-    - [`react` `react-dom`](#react-react-dom)
-  - [Modules (for development)](#modules-for-development)
     - [`babel-core`](#babel-core)
     - [`babel-eslint`](#babel-eslint)
     - [`babel-loader`](#babel-loader)
     - [`babel-plugin-istanbul`](#babel-plugin-istanbul)
     - [`babel-preset-env` `babel-preset-react` `babel-preset-stage-0`](#babel-preset-env-babel-preset-react-babel-preset-stage-0)
-    - [`chai`](#chai)
+    - [`classnames`](#classnames)
     - [`cross-env`](#cross-env)
     - [`css-loader`](#css-loader)
     - [`del-cli`](#del-cli)
-    - [`eslint` `eslint-config-airbnb` `eslint-plugin-import` `eslint-plugin-jsx-a11y` `eslint-plugin-react`](#eslint-eslint-config-airbnb-eslint-plugin-import-eslint-plugin-jsx-a11y-eslint-plugin-react)
+    - [`express`](#express)
     - [`extract-text-webpack-plugin`](#extract-text-webpack-plugin)
     - [`file-loader`](#file-loader)
     - [`html-webpack-plugin`](#html-webpack-plugin)
-    - [`mocha`](#mocha)
-    - [`nyc`](#nyc)
     - [`postcss-cssnext`](#postcss-cssnext)
     - [`postcss-loader`](#postcss-loader)
+    - [`react` `react-dom`](#react-react-dom)
     - [`uglifyjs-webpack-plugin`](#uglifyjs-webpack-plugin)
     - [`webpack`](#webpack)
     - [`webpack-bundle-analyzer`](#webpack-bundle-analyzer)
-    - [`webpack-dev-server`](#webpack-dev-server)
     - [`webpack-merge`](#webpack-merge)
+  - [Modules (for development)](#modules-for-development)
+    - [`chai`](#chai)
+    - [`eslint` `eslint-config-airbnb` `eslint-plugin-import` `eslint-plugin-jsx-a11y` `eslint-plugin-react`](#eslint-eslint-config-airbnb-eslint-plugin-import-eslint-plugin-jsx-a11y-eslint-plugin-react)
+    - [`mocha`](#mocha)
+    - [`nyc`](#nyc)
+    - [`webpack-dev-server`](#webpack-dev-server)
   - [Notes](#notes)
     - [`extract-text-webpack-plugin`](#extract-text-webpack-plugin-1)
     - [Source Maps](#source-maps)
@@ -55,14 +56,6 @@ The app has basic features just to test the tools in the project
 <!-- /TOC -->
 
 ## Modules
-
-### `classnames`
-For using CSS Modules inside components. See [bind](https://www.npmjs.com/package/classnames#alternate-bind-version-for-css-modules-)
-
-### `react` `react-dom`
-React development
-
-## Modules (for development)
 
 ### `babel-core`
 JS transpiler for using modern ECMAScript code
@@ -79,8 +72,8 @@ Add instrumenting code to ES6 source code. This is later used by a reporting ser
 ### `babel-preset-env` `babel-preset-react` `babel-preset-stage-0`
 Presets for the transpiler to recognize modern ECMAScript constructions
 
-### `chai`
-Assertion framework. See `expect` usage in example tests
+### `classnames`
+For using CSS Modules inside components. See [bind](https://www.npmjs.com/package/classnames#alternate-bind-version-for-css-modules-)
 
 ### `cross-env`
 For settings Node environment variables in a cross-platform manner
@@ -91,8 +84,8 @@ Webpack loader for `.css` files
 ### `del-cli`
 For deleting files in a cross-platform manner
 
-### `eslint` `eslint-config-airbnb` `eslint-plugin-import` `eslint-plugin-jsx-a11y` `eslint-plugin-react`
-Linter, Airbnb configuration to `eslint` and plugins used by the configuration
+### `express`
+Server
 
 ### `extract-text-webpack-plugin`
 Allows to extract all CSS files to a CSS bundle instead of bundling it with the JS code
@@ -103,17 +96,14 @@ Webpack loader for files `(png|svg|jpg|gif)`
 ### `html-webpack-plugin`
 For creating `index.html` automatically from a template file and inject JS and CSS bundles
 
-### `mocha`
-Test runner
-
-### `nyc`
-Istanbul's state of the art command line interface. Reports code coverage in several formats
-
 ### `postcss-cssnext`
 Parser for [CssNext](http://cssnext.io/features/) syntax
 
 ### `postcss-loader`
 Webpack loader for files `.css` files. Used after `css-loader` to plugin `postcss-cssnext` parser
+
+### `react` `react-dom`
+React development
 
 ### `uglifyjs-webpack-plugin`
 Makes JS code smaller using several techniques
@@ -124,11 +114,25 @@ Module bundler
 ### `webpack-bundle-analyzer`
 Display statistics over a webpack bundle
 
-### `webpack-dev-server`
-For running the app in development with hot reloading
-
 ### `webpack-merge`
 Merge webpack configuration with ease
+
+## Modules (for development)
+
+### `chai`
+Assertion framework. See `expect` usage in example tests
+
+### `eslint` `eslint-config-airbnb` `eslint-plugin-import` `eslint-plugin-jsx-a11y` `eslint-plugin-react`
+Linter, Airbnb configuration to `eslint` and plugins used by the configuration
+
+### `mocha`
+Test runner
+
+### `nyc`
+Istanbul's state of the art command line interface. Reports code coverage in several formats
+
+### `webpack-dev-server`
+For running the app in development with hot reloading
 
 ## Notes
 

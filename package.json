@@ -18,7 +18,7 @@
     "clean": "del-cli ./dist/*",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.development.js",
     "start-prd": "cross-env NODE_ENV=production webpack-dev-server --config ./webpack/webpack.production.js",
-    "server": "cross-env NODE_ENV=production node server.js",
+    "server": "npm run build-prd",
     "lint": "eslint src --ext .jsx,.js",
     "test-no-lint": "del-cli ./.nyc_output/* && cross-env NODE_ENV=test nyc mocha --opts mocha.opts \"src/**/*.test.{js,jsx}\"",
     "test": "npm run lint && npm run test-no-lint"
@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "express": "^4.16.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },

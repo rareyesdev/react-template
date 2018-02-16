@@ -18,6 +18,7 @@
     "clean": "del-cli ./dist/*",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.development.js",
     "start-prd": "cross-env NODE_ENV=production webpack-dev-server --config ./webpack/webpack.production.js",
+    "server": "cross-env NODE_ENV=production node server.js",
     "lint": "eslint src --ext .jsx,.js",
     "test-no-lint": "del-cli ./.nyc_output/* && cross-env NODE_ENV=test nyc mocha --opts mocha.opts \"src/**/*.test.{js,jsx}\"",
     "test": "npm run lint && npm run test-no-lint"

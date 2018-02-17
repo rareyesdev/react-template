@@ -1,11 +1,8 @@
 /* eslint-disable func-names */
 /* eslint-disable prefer-arrow-callback */
-/* eslint-disable no-console */
 
 import { expect } from 'chai';
 import foo from './dummy-function';
-
-console.log('NODE_ENV: ', process.env.NODE_ENV);
 
 describe('dummy-function', function () {
   context('when passing a truthy value', function () {

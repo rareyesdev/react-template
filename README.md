@@ -32,9 +32,11 @@ The app has basic features just to test the tools in the project
     - [`extract-text-webpack-plugin`](#extract-text-webpack-plugin)
     - [`file-loader`](#file-loader)
     - [`html-webpack-plugin`](#html-webpack-plugin)
+    - [`morgan`](#morgan)
     - [`postcss-cssnext`](#postcss-cssnext)
     - [`postcss-loader`](#postcss-loader)
     - [`react` `react-dom`](#react-react-dom)
+    - [`rotating-file-stream`](#rotating-file-stream)
     - [`uglifyjs-webpack-plugin`](#uglifyjs-webpack-plugin)
     - [`webpack`](#webpack)
     - [`webpack-bundle-analyzer`](#webpack-bundle-analyzer)
@@ -96,6 +98,9 @@ Webpack loader for files `(png|svg|jpg|gif)`
 ### `html-webpack-plugin`
 For creating `index.html` automatically from a template file and inject JS and CSS bundles
 
+### `morgan`
+Logger middleware for Express
+
 ### `postcss-cssnext`
 Parser for [CssNext](http://cssnext.io/features/) syntax
 
@@ -104,6 +109,9 @@ Webpack loader for files `.css` files. Used after `css-loader` to plugin `postcs
 
 ### `react` `react-dom`
 React development
+
+### `rotating-file-stream`
+Creates a `stream.Writable` to a file which is rotated. Rotation behaviour can be deeply customized
 
 ### `uglifyjs-webpack-plugin`
 Makes JS code smaller using several techniques

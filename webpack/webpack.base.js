@@ -5,6 +5,7 @@ const path = require('path');
 const postCssCssNext = require('postcss-cssnext');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const enableWebpackBundlerAnalyzer = process.env.ENABLE_BUNDLE_ANALYZER ? 'server' : 'disabled';
 
@@ -76,6 +77,9 @@ const config = {
       inject: 'body'
     }),
     new ExtractTextPlugin('bundle.css'),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
     new BundleAnalyzerPlugin({
       analyzerMode: enableWebpackBundlerAnalyzer
     })

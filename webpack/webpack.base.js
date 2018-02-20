@@ -13,14 +13,14 @@ const extractCss = process.env.NODE_ENV !== 'development';
 const minimizeCss = process.env.NODE_ENV !== 'development';
 
 const ExtractTextWebpackPluginInstance = new ExtractTextWebpackPlugin({
-  filename: 'bundle.css',
+  filename: 'bundle__[contenthash:7].css',
   disable: !extractCss
 });
 
 const config = {
   entry: './src/index.jsx',
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle__[hash:7].js',
     path: path.resolve('dist'),
     publicPath: '/'
   },

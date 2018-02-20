@@ -80,7 +80,8 @@ const config = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    symlinks: false
   }
 };
 

@@ -52,6 +52,7 @@ The app has basic features just to test the tools in the project
     - [Source Maps](#source-maps)
     - [Eslint](#eslint)
     - [Minify](#minify)
+    - [Disable npm-link](#disable-npm-link)
   - [Contribution Guidelines](#contribution-guidelines)
     - [README.md](#readmemd)
 
@@ -160,6 +161,14 @@ No fallback is used here because we want the CSS file in all environments. Somet
   presets: [
     ['env', { modules: false }],
   ],
+}
+```
+
+### Disable npm-link
+This might help speed the compilation process when [symlinks](https://docs.npmjs.com/cli/link) are not used. Source: [Webpack Documentation - Build Performance](https://webpack.js.org/guides/build-performance/#resolving)
+```javascript
+resolve: {
+  symlinks: false
 }
 ```
 

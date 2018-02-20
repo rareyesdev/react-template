@@ -1,6 +1,6 @@
 /* eslint-disable comma-dangle */
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const postCssCssNext = require('postcss-cssnext');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -8,6 +8,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 const enableWebpackBundlerAnalyzer = process.env.ENABLE_BUNDLE_ANALYZER ? 'server' : 'disabled';
+
+const extractCss = process.env.NODE_ENV !== 'development';
+const minimizeCss = process.env.NODE_ENV !== 'development';
+
+const ExtractTextWebpackPluginInstance = new ExtractTextWebpackPlugin({
+  filename: 'bundle.css',
+  disable: !extractCss
+});
 
 const config = {
   entry: './src/index.jsx',
@@ -30,13 +38,16 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
+        use: ExtractTextWebpackPluginInstance.extract({
+          fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
               options: {
                 modules: true,
                 importLoaders: 1,
+                sourceMap: true,
+                minimize: minimizeCss,
                 localIdentName: '[name]--[local]'
               }
             },
@@ -76,7 +87,7 @@ const config = {
       filename: 'index.html',
       inject: 'body'
     }),
-    new ExtractTextPlugin('bundle.css'),
+    ExtractTextWebpackPluginInstance,
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),

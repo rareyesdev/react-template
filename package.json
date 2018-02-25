@@ -38,6 +38,9 @@
     "lines": 10,
     "cache": true
   },
+  "browserslist": [
+    "last 2 versions"
+  ],
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",

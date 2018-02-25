@@ -55,9 +55,7 @@ const config = {
               loader: 'postcss-loader',
               options: {
                 plugins: () => [
-                  postCssCssNext({
-                    browsers: ['ie >= 8', 'last 2 versions']
-                  })
+                  postCssCssNext()
                 ]
               }
             }

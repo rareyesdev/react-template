@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'IndieFlower';
-  src:  url('./assets/fonts/IndieFlower.ttf') format('woff2');
+  src: url('./assets/fonts/IndieFlower.ttf') format('woff2');
   font-weight: 600;
   font-style: normal;
 }
@@ -22,11 +22,11 @@
   }
 }
 
-.bookmark-icon:before {
+.bookmark-icon::before {
   content: url('./assets/images/icons/bookmark.svg');
 }
 
 .with-nice-font {
-  font-family: 'IndieFlower';
+  font-family: 'IndieFlower, 'sans-serif'';
   font-size: 40px;
 }

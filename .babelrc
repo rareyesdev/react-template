@@ -11,9 +11,7 @@
       "presets":[
         ["env", {
           "node": "current"
-        }],
-        ["react"],
-        ["stage-0"]
+        }]
       ],
       "plugins": [
         ["istanbul", {

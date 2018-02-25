@@ -2,6 +2,7 @@
 
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+const postCssImport = require('postcss-import');
 const postCssCssNext = require('postcss-cssnext');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -55,6 +56,7 @@ const config = {
               loader: 'postcss-loader',
               options: {
                 plugins: () => [
+                  postCssImport(),
                   postCssCssNext()
                 ]
               }

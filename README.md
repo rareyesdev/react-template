@@ -34,6 +34,7 @@ The app has basic features just to test the tools in the project
     - [`html-webpack-plugin`](#html-webpack-plugin)
     - [`morgan`](#morgan)
     - [`postcss-cssnext`](#postcss-cssnext)
+    - [`postcss-import`](#postcss-import)
     - [`postcss-loader`](#postcss-loader)
     - [`react` `react-dom`](#react-react-dom)
     - [`rotating-file-stream`](#rotating-file-stream)
@@ -101,6 +102,9 @@ Logger middleware for Express
 
 ### `postcss-cssnext`
 Parser for [CssNext](http://cssnext.io/features/) syntax
+
+### `postcss-import`
+Allows to `@import './styles/some-file.css'` inside other CSS files
 
 ### `postcss-loader`
 Webpack loader for files `.css` files. Used after `css-loader` to plugin `postcss-cssnext` parser

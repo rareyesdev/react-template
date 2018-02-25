@@ -47,6 +47,8 @@ The app has basic features just to test the tools in the project
     - [`eslint` `eslint-config-airbnb` `eslint-plugin-import` `eslint-plugin-jsx-a11y` `eslint-plugin-react`](#eslint-eslint-config-airbnb-eslint-plugin-import-eslint-plugin-jsx-a11y-eslint-plugin-react)
     - [`mocha`](#mocha)
     - [`nyc`](#nyc)
+    - [`stylelint`](#stylelint)
+    - [`stylelint-config-standard`](#stylelint-config-standard)
     - [`webpack-dev-server`](#webpack-dev-server)
   - [Notes](#notes)
     - [Eslint](#eslint)
@@ -140,6 +142,12 @@ Test runner
 
 ### `nyc`
 Istanbul's state of the art command line interface. Reports code coverage in several formats
+
+### `stylelint`
+Linter for CSS
+
+### `stylelint-config-standard`
+Standard set of rules for `stylelint`
 
 ### `webpack-dev-server`
 For running the app in development with hot reloading

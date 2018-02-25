@@ -25,18 +25,21 @@
     "test": "npm run lint && npm run test-no-lint"
   },
   "nyc": {
-    "sourceMap": false,
-    "instrument": false,
-    "reporter": [
-      "html",
-      "text-summary"
-    ],
     "check-coverage": false,
     "statements": 10,
     "branches": 10,
     "functions": 10,
     "lines": 10,
-    "cache": true
+    "sourceMap": false,
+    "instrument": false,
+    "cache": true,
+    "include": [
+      "src/**/*.js{,x}"
+    ],
+    "reporter": [
+      "html",
+      "text-summary"
+    ]
   },
   "browserslist": [
     "last 2 versions"

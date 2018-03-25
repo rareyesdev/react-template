@@ -12,7 +12,7 @@ initLogger();
 
 app.use(fileLoggerMiddleware());
 app.use(consoleLoggerMiddleware());
-app.use(express.static(path.join(__dirname, '..', '..', 'dist')));
+app.use(express.static(path.resolve('dist')));
 app.set('port', port);
 
 const server = app.listen(port, () => {

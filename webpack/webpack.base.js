@@ -30,12 +30,12 @@ const config = {
       {
         test: /\.js$/,
         use: 'babel-loader',
-        include: path.resolve(__dirname, '..', 'src')
+        include: path.resolve('src')
       },
       {
         test: /\.jsx$/,
         use: 'babel-loader',
-        include: path.resolve(__dirname, '..', 'src')
+        include: path.resolve('src')
       },
       {
         test: /\.css$/,
@@ -63,7 +63,7 @@ const config = {
             }
           ]
         }),
-        include: path.resolve(__dirname, '..', 'src')
+        include: path.resolve('src')
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -75,7 +75,7 @@ const config = {
             }
           },
         ],
-        include: path.resolve(__dirname, '..', 'src')
+        include: path.resolve('src')
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -87,7 +87,7 @@ const config = {
             }
           },
         ],
-        include: path.resolve(__dirname, '..', 'src')
+        include: path.resolve('src')
       }
     ]
   },

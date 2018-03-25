@@ -4,7 +4,7 @@ const path = require('path');
 const morgan = require('morgan');
 
 const fileName = 'file.log';
-const logDirectory = path.join(__dirname, '..', '..', '..', 'logs');
+const logDirectory = path.resolve('logs');
 
 // create filenames using UTC instead of local time
 function fileNameGenerator(date, index) {

@@ -63,7 +63,25 @@ const config = {
             }
           ]
         }),
-        include: path.resolve('src')
+        include: path.resolve('src'),
+        exclude: path.resolve('src', 'styles'),
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextWebpackPluginInstance.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: false,
+                sourceMap: true,
+                minimize: minimizeCss,
+              }
+            }
+          ]
+        }),
+        include: path.resolve('src', 'styles')
       },
       {
         test: /\.(png|svg|jpg|gif)$/,

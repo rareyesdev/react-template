@@ -1,5 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+// import MaterialUiView from './views/material-ui';
+import BootstrapView from './views/bootstrap';
 import { usedFunction } from './utils/unused-function';
 import styles from './app.css';
 
@@ -36,6 +38,8 @@ class App extends React.Component {
         <div>
           NODE_ENV: {env}
         </div>
+        {/* <MaterialUiView /> */}
+        <BootstrapView />
       </div>
     );
   }

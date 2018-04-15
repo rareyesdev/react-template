@@ -1,4 +1,4 @@
-@import './styles/theme.css';
+@import './styles/bootstrap-cosmo.css';
 
 @font-face {
   font-family: 'IndieFlower';
@@ -8,13 +8,13 @@
 }
 
 .component {
-  height: 600px;
+  height: 130px;
   color: white;
   background-image: url('./assets/images/backgrounds/main-background.jpg');
 }
 
 .name-section {
-  color: var(--red);
+  color: var(--success);
   background: white;
 
   & .person-name {

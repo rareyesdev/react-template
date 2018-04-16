@@ -27,6 +27,7 @@ The app has basic features just to test the tools in the project
     - [`babel-preset-env`,`babel-preset-react`,`babel-preset-stage-0`](#babel-preset-envbabel-preset-reactbabel-preset-stage-0)
     - [`bootstrap`](#bootstrap)
     - [`classnames`](#classnames)
+    - [`connect-history-api-fallback`](#connect-history-api-fallback)
     - [`cross-env`](#cross-env)
     - [`css-loader`](#css-loader)
     - [`del-cli`](#del-cli)
@@ -93,6 +94,9 @@ Bootstrap 4 UI Framework (full framework with SCSS for compiling locally)
 
 ### `classnames`
 For using CSS Modules inside components. See [bind](https://www.npmjs.com/package/classnames#alternate-bind-version-for-css-modules-)
+
+### `connect-history-api-fallback`
+Middleware to proxy requests through a specified index page, useful for Single Page Applications that utilise the HTML5 History API
 
 ### `cross-env`
 For settings Node environment variables in a cross-platform manner

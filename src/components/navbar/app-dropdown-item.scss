@@ -1,0 +1,10 @@
+@import '../../styles/_variables.scss';
+
+.component {
+  a {
+    color: inherit !important;
+  }
+  :global(a.active) {
+    color: $primary !important;
+  }
+}

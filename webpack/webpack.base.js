@@ -2,11 +2,10 @@
 
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
-const postCssImport = require('postcss-import');
-const postCssCssNext = require('postcss-cssnext');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
 const enableWebpackBundlerAnalyzer = process.env.ENABLE_BUNDLE_ANALYZER ? 'server' : 'disabled';
 
@@ -17,6 +16,15 @@ const ExtractTextWebpackPluginInstance = new ExtractTextWebpackPlugin({
   filename: 'bundle__[contenthash:7].css',
   disable: !extractCss
 });
+
+const postcssLoader = {
+  loader: 'postcss-loader',
+  options: {
+    plugins: () => [
+      autoprefixer
+    ]
+  }
+};
 
 const config = {
   entry: './src/index.jsx',
@@ -37,8 +45,9 @@ const config = {
         use: 'babel-loader',
         include: path.resolve('src')
       },
+      // Loads all CSS related to components. Uses CSS Modules
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: ExtractTextWebpackPluginInstance.extract({
           fallback: 'style-loader',
           use: [
@@ -52,22 +61,18 @@ const config = {
                 localIdentName: '[name]--[local]'
               }
             },
+            postcssLoader,
             {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => [
-                  postCssImport(),
-                  postCssCssNext()
-                ]
-              }
+              loader: 'sass-loader'
             }
           ]
         }),
         include: path.resolve('src'),
-        exclude: path.resolve('src', 'styles'),
+        exclude: path.resolve('src', 'styles')
       },
+      // Loads all Bootstrap CSS. Disabled CSS Modules
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: ExtractTextWebpackPluginInstance.extract({
           fallback: 'style-loader',
           use: [
@@ -78,6 +83,10 @@ const config = {
                 sourceMap: true,
                 minimize: minimizeCss,
               }
+            },
+            postcssLoader,
+            {
+              loader: 'sass-loader'
             }
           ]
         }),

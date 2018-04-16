@@ -2,7 +2,11 @@
 
 const path = require('path');
 const express = require('express');
-const { init: initLogger, fileLogger: fileLoggerMiddleware, consoleLogger: consoleLoggerMiddleware } = require('./middlewares/logging');
+const {
+  init: initLogger,
+  fileLogger: fileLoggerMiddleware,
+  consoleLogger: consoleLoggerMiddleware,
+} = require('./middlewares/logging');
 
 const app = express();
 

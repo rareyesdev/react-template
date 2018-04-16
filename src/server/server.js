@@ -2,7 +2,12 @@
 
 const path = require('path');
 const express = require('express');
-const { init: initLogger, fileLogger: fileLoggerMiddleware, consoleLogger: consoleLoggerMiddleware } = require('./middlewares/logging');
+const historyApiFallback = require('connect-history-api-fallback');
+const {
+  init: initLogger,
+  fileLogger: fileLoggerMiddleware,
+  consoleLogger: consoleLoggerMiddleware,
+} = require('./middlewares/logging');
 
 const app = express();
 
@@ -12,7 +17,8 @@ initLogger();
 
 app.use(fileLoggerMiddleware());
 app.use(consoleLoggerMiddleware());
-app.use(express.static(path.join(__dirname, '..', '..', 'dist')));
+app.use(historyApiFallback());
+app.use(express.static(path.resolve('dist')));
 app.set('port', port);
 
 const server = app.listen(port, () => {

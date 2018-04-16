@@ -7,7 +7,8 @@ const baseConfig = require('./webpack.base.js');
 const config = {
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.resolve('dist')
+    contentBase: path.resolve('dist'),
+    historyApiFallback: true,
   }
 };
 

@@ -1,11 +1,7 @@
 {
   "presets":[
     ["env", { 
-      "targets": {
-        "browsers": ["last 2 versions", "> 5% in BE"],
-        "uglify": true
-      },
-      "modules": false 
+      "modules": false
     }],
     ["react"],
     ["stage-0"]
@@ -15,20 +11,11 @@
       "presets":[
         ["env", {
           "node": "current"
-        }],
-        ["react"],
-        ["stage-0"]
+        }]
       ],
       "plugins": [
         ["istanbul", {
-          "useInlineSourceMaps": false,
-          "exclude": [
-             "**/*.test.js{,x}",
-             "webpack.config.js",
-             "coverage",
-             "dist",
-             "node_modules"
-          ]
+          "useInlineSourceMaps": false
         }]
       ]
     }

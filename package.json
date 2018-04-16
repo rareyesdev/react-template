@@ -10,59 +10,86 @@
     "url": "https://github.com/ramonrf/react-template.git"
   },
   "scripts": {
-    "build": "npm run clean && cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.js",
-    "build-analyze": "cross-env ENABLE_BUNDLE_ANALYZER=true npm run build",
+    "build": "webpack --config ./webpack/webpack.$NODE_ENV.js",
+    "build-dev": "npm run clean && cross-env NODE_ENV=development npm run build",
+    "build-prd": "npm run clean && cross-env NODE_ENV=production npm run build",
+    "build-analyze-dev": "cross-env ENABLE_BUNDLE_ANALYZER=true npm run build-dev",
+    "build-analyze-prd": "cross-env ENABLE_BUNDLE_ANALYZER=true npm run build-prd",
     "clean": "del-cli ./dist/*",
-    "start": "webpack-dev-server --config ./webpack/webpack.config.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.development.js",
+    "start-prd": "cross-env NODE_ENV=production webpack-dev-server --config ./webpack/webpack.production.js",
+    "server": "npm run build-prd && node ./src/server/server.js",
+    "server-dev": "npm run build-dev && node ./src/server/server.js",
     "lint": "eslint src --ext .jsx,.js",
     "test-no-lint": "del-cli ./.nyc_output/* && cross-env NODE_ENV=test nyc mocha --opts mocha.opts \"src/**/*.test.{js,jsx}\"",
     "test": "npm run lint && npm run test-no-lint"
   },
   "nyc": {
-    "sourceMap": false,
-    "instrument": false,
-    "reporter": [
-      "html",
-      "text-summary"
-    ],
     "check-coverage": false,
     "statements": 10,
     "branches": 10,
     "functions": 10,
     "lines": 10,
-    "cache": true
+    "sourceMap": false,
+    "instrument": false,
+    "cache": true,
+    "include": [
+      "src/**/*.js{,x}"
+    ],
+    "reporter": [
+      "html",
+      "text-summary"
+    ]
   },
+  "browserslist": [
+    "last 2 versions"
+  ],
   "dependencies": {
-    "classnames": "^2.2.5",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
-  },
-  "devDependencies": {
+    "autoprefixer": "^8.2.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-istanbul": "^4.1.5",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-istanbul": "^4.1.6",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "chai": "^4.1.2",
-    "cross-env": "^5.1.3",
-    "css-loader": "^0.28.9",
+    "bootstrap": "^4.1.0",
+    "classnames": "^2.2.5",
+    "connect-history-api-fallback": "^1.5.0",
+    "cross-env": "^5.1.4",
+    "css-loader": "^0.28.11",
     "del-cli": "^1.1.0",
-    "eslint": "^4.17.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.6.1",
+    "express": "^4.16.3",
     "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^1.1.6",
+    "file-loader": "^1.1.11",
     "html-webpack-plugin": "^2.30.1",
-    "mocha": "^5.0.0",
-    "nyc": "^11.4.1",
-    "postcss-cssnext": "^3.1.0",
-    "postcss-loader": "^2.1.0",
+    "morgan": "^1.9.0",
+    "node-sass": "^4.8.3",
+    "postcss-loader": "^2.1.4",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-router-dom": "^4.2.2",
+    "reactstrap": "^5.0.0-beta.3",
+    "rotating-file-stream": "^1.3.6",
+    "sass-loader": "^6.0.1",
+    "style-loader": "^0.20.3",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^3.11.0",
-    "webpack-bundle-analyzer": "^2.10.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-merge": "^4.1.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "mocha": "^5.1.0",
+    "nyc": "^11.6.0",
+    "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "webpack-dev-server": "^2.11.2"
   }
 }

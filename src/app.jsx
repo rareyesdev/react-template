@@ -1,33 +1,32 @@
 import React from 'react';
-import classNames from 'classnames/bind';
-import styles from './app.css';
+// import classNames from 'classnames/bind';
+import { Switch, Route } from 'react-router-dom';
+import Navbar from './components/navbar';
+import BootstrapView from './views/bootstrap';
+import LoadingFontsView from './views/loading-fonts';
+import LoadingImagesView from './views/loading-images';
+import TreeShakingView from './views/tree-shaking';
+// import styles from './app.scss';
+import './styles/bootstrap-overrides.scss';
 
-const cx = classNames.bind(styles);
+// const cx = classNames.bind(styles);
 
 class App extends React.Component {
   state = {
-    name: '',
-  }
 
-  onChange = (event) => {
-    this.setState({
-      name: event.target.value,
-    });
   }
 
   render() {
-    const { name } = this.state;
     return (
-      <div className={cx('component')}>
-        {"What's your name: "} <input type="text" onChange={this.onChange} value={name} />
-        <div className={cx('name-section')}>
-          <i className={cx('bookmark-icon')} />
-          {name && '-> Hello '}
-          {name && <span className={cx('person-name')}>{name}</span>}
-        </div>
-        <div className={cx('with-nice-font')}>
-          This is some text with a nice custom font
-        </div>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" render={() => (<div>Welcome</div>)} />
+          <Route path="/bootstrap-components" component={BootstrapView} />
+          <Route path="/more/loading-fonts" component={LoadingFontsView} />
+          <Route path="/more/loading-images" component={LoadingImagesView} />
+          <Route path="/more/tree-shaking" component={TreeShakingView} />
+        </Switch>
       </div>
     );
   }

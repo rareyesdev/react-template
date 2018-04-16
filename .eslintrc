@@ -7,5 +7,7 @@
   },
   "extends": "airbnb",
   "rules": {
+    "react/forbid-prop-types": false,
+    "arrow-body-style": 0
   }
 }

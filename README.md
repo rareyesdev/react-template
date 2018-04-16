@@ -59,6 +59,9 @@ The app has basic features just to test the tools in the project
     - [`stylelint`](#stylelint)
     - [`stylelint-config-standard`](#stylelint-config-standard)
     - [`webpack-dev-server`](#webpack-dev-server)
+  - [Bootstrap](#bootstrap)
+    - [Theming](#theming)
+  - [React Bootstrap](#react-bootstrap)
   - [Eslint](#eslint)
     - [Airbnb Configuration Overrides](#airbnb-configuration-overrides)
   - [Webpack](#webpack)
@@ -196,6 +199,16 @@ Standard set of rules for `stylelint`
 
 ### `webpack-dev-server`
 For running the app in development with hot reloading
+
+## Bootstrap
+
+### Theming
+
+https://bootstrap.build/app/v4.0/
+
+## React Bootstrap
+
+https://reactstrap.github.io/
 
 ## Eslint
 > Some rules are manually disabled in configuration files because they might cause issue with their respective parsers (example `eslint-disable comma-dangle` in webpack configuration file)

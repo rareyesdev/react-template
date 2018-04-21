@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/demo-image.jpg';
+import image from '../../assets/images/demo-image.jpg';
 
 const View = () => (
   <div>

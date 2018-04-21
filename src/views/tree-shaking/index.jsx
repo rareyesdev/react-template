@@ -1,5 +1,5 @@
 import React from 'react';
-import { usedFunction } from '../utils/unused-function';
+import { usedFunction } from '../../utils/unused-function';
 
 const View = () => {
   return (

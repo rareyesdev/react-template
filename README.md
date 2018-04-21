@@ -30,7 +30,6 @@ The app has basic features just to test the tools in the project
     - [`connect-history-api-fallback`](#connect-history-api-fallback)
     - [`cross-env`](#cross-env)
     - [`css-loader`](#css-loader)
-    - [`del-cli`](#del-cli)
     - [`express`](#express)
     - [`extract-text-webpack-plugin`](#extract-text-webpack-plugin)
     - [`file-loader`](#file-loader)
@@ -46,6 +45,7 @@ The app has basic features just to test the tools in the project
     - [`reactstrap`](#reactstrap)
     - [`rotating-file-stream`](#rotating-file-stream)
     - [`sass-loader`](#sass-loader)
+    - [`shx`](#shx)
     - [`style-loader`](#style-loader)
     - [`uglifyjs-webpack-plugin`](#uglifyjs-webpack-plugin)
     - [`url-loader`](#url-loader)
@@ -108,9 +108,6 @@ For settings Node environment variables in a cross-platform manner
 ### `css-loader`
 Webpack loader for `.css` files
 
-### `del-cli`
-For deleting files in a cross-platform manner
-
 ### `express`
 Server
 
@@ -162,6 +159,10 @@ Creates a `stream.Writable` to a file which is rotated. Rotation behaviour can b
 
 ### `sass-loader`
 Loads a Sass/SCSS file and compiles it to CSS
+
+### `shx`
+Wrapper around ShellJS Unix commands, providing an easy solution for simple Unix-like, cross-platform commands in npm package scripts.
+Used for deleting files in a cross-platform manner
 
 ### `style-loader`
 Adds CSS to the DOM by injecting a `<style>` tag

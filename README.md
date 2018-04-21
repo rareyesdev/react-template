@@ -48,6 +48,7 @@ The app has basic features just to test the tools in the project
     - [`sass-loader`](#sass-loader)
     - [`style-loader`](#style-loader)
     - [`uglifyjs-webpack-plugin`](#uglifyjs-webpack-plugin)
+    - [`url-loader`](#url-loader)
     - [`webpack`](#webpack)
     - [`webpack-bundle-analyzer`](#webpack-bundle-analyzer)
     - [`webpack-merge`](#webpack-merge)
@@ -168,6 +169,9 @@ Adds CSS to the DOM by injecting a `<style>` tag
 ### `uglifyjs-webpack-plugin`
 Makes JS code smaller using several techniques
 
+### `url-loader`
+Loads files as `base64` encoded URL. Has `file-loader` as fallback option
+
 ### `webpack`
 Module bundler
 
@@ -227,6 +231,20 @@ arrow-body-style should be used with care. Omitting curly braces might look good
 
 - **`extract-text-webpack-plugin`:**
 We disable CSS extractiion in development to improve build speed (`style-loader` is used instead). Check [this](https://stackoverflow.com/questions/43403603/why-is-style-loader-used-as-a-fallback-with-webpacks-extractsass-plugin) for more
+
+- **Embed Small Files:**
+Using `url-loader` we can embed assets such as images, fonts and other files directly into the current file. This means that `url` CSS function or `require`/`import` JS statments will return the `base64` version of the file content instead of returning the file's URL. This feature is enabled in production only because otherwise it would hide some resources form Webpack output during development. This behavior is controlled using a file size so only small files are embeded. Big files will be resolved using `file-loader` and `url`,`require`,`import` will return URLs pointing to the file as ususal
+  ```javascript
+  {
+    loader: 'url-loader',
+    options: {
+      limit: 8192,
+      fallback: 'file-loader',
+      name: '[name]__[hash:7].[ext]'
+    }
+  }
+  ```
+
 
 - **Source Maps:**
 `devtool: 'inline-source-map'` in `webpack.config.js` is responsible for enabling source maps. This way we get nice error messages pointing to the real file and not the bundled file

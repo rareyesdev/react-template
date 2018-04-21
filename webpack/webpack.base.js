@@ -20,6 +20,7 @@ const ExtractTextWebpackPluginInstance = new ExtractTextWebpackPlugin({
 const postcssLoader = {
   loader: 'postcss-loader',
   options: {
+    sourceMap: true,
     plugins: () => [
       autoprefixer
     ]
@@ -63,7 +64,10 @@ const config = {
             },
             postcssLoader,
             {
-              loader: 'sass-loader'
+              loader: 'resolve-url-loader'
+            },
+            {
+              loader: 'sass-loader?sourceMap'
             }
           ]
         }),

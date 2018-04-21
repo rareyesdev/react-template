@@ -43,6 +43,7 @@ The app has basic features just to test the tools in the project
     - [`react`,`react-dom`](#reactreact-dom)
     - [`react-router-dom`](#react-router-dom)
     - [`reactstrap`](#reactstrap)
+    - [`resolve-url-loader`](#resolve-url-loader)
     - [`rotating-file-stream`](#rotating-file-stream)
     - [`sass-loader`](#sass-loader)
     - [`shx`](#shx)
@@ -153,6 +154,11 @@ React client router
 
 ### `reactstrap`
 React Bootstrap 4 components
+
+### `resolve-url-loader`
+Webpack loader that resolves relative paths in url() statements based on the original source file. This is required so we can specify relative URLs inside SCSS files.
+See [sass-loader problems with url()](https://github.com/webpack-contrib/sass-loader#problems-with-url).
+`resolve-url-loader` requires Source Maps enabled in `sass-loader` to work, then, we also need to enable Source Maps for `postcss-loader` otherwise it will ignore the previous Source Map and a warning will be generated ([postcss-loader source maps](https://github.com/postcss/postcss-loader#sourcemap))
 
 ### `rotating-file-stream`
 Creates a `stream.Writable` to a file which is rotated. Rotation behaviour can be deeply customized

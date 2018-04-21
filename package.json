@@ -11,19 +11,22 @@
   },
   "scripts": {
     "build": "webpack --config ./webpack/webpack.$NODE_ENV.js",
-    "build-dev": "npm run clean && cross-env NODE_ENV=development npm run build",
-    "build-prd": "npm run clean && cross-env NODE_ENV=production npm run build",
+    "build-dev": "npm run clean-dist && cross-env NODE_ENV=development npm run build",
+    "build-prd": "npm run clean-dist && cross-env NODE_ENV=production npm run build",
     "build-analyze-dev": "cross-env ENABLE_BUNDLE_ANALYZER=true npm run build-dev",
     "build-analyze-prd": "cross-env ENABLE_BUNDLE_ANALYZER=true npm run build-prd",
-    "clean": "del-cli ./dist/*",
+
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.development.js",
     "start-prd": "cross-env NODE_ENV=production webpack-dev-server --config ./webpack/webpack.production.js",
     "server": "npm run build-prd && node ./src/server/server.js",
     "server-dev": "npm run build-dev && node ./src/server/server.js",
+
     "lint": "eslint src --ext .jsx,.js",
     "test-no-lint": "npm run remove-nyc_output && cross-env NODE_ENV=test nyc mocha --opts mocha.opts \"src/**/*.test.{js,jsx}\"",
     "test": "npm run lint && npm run test-no-lint",
     "posttest": "npm run remove-nyc_output",
+
+    "clean-dist": "del-cli ./dist/*",
     "remove-nyc_output": "del-cli ./.nyc_output/"
   },
   "nyc": {

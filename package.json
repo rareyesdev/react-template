@@ -21,8 +21,10 @@
     "server": "npm run build-prd && node ./src/server/server.js",
     "server-dev": "npm run build-dev && node ./src/server/server.js",
     "lint": "eslint src --ext .jsx,.js",
-    "test-no-lint": "del-cli ./.nyc_output/* && cross-env NODE_ENV=test nyc mocha --opts mocha.opts \"src/**/*.test.{js,jsx}\"",
-    "test": "npm run lint && npm run test-no-lint"
+    "test-no-lint": "npm run remove-nyc_output && cross-env NODE_ENV=test nyc mocha --opts mocha.opts \"src/**/*.test.{js,jsx}\"",
+    "test": "npm run lint && npm run test-no-lint",
+    "posttest": "npm run remove-nyc_output",
+    "remove-nyc_output": "del-cli ./.nyc_output/"
   },
   "nyc": {
     "check-coverage": false,

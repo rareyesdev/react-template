@@ -275,9 +275,11 @@ resolve: {
 ```
 
 ### Webpack Bundle Analysis
-Some tools can be used to analyze Webpack output. [This article](https://survivejs.com/webpack/optimizing/build-analysis/) contains a good reference for this.
+The [Official Webpack Analyzer](http://webpack.github.io/analyse/) runs using `stats.json` from `npm run webpack-create-stats`
 
-From that article these two options were reviewed, they look interesting but not enough to add them to the project:
+Some other tools can be used to analyze Webpack output. [This article](https://survivejs.com/webpack/optimizing/build-analysis/) contains a good reference for this.
+
+From that article these options were reviewed, they look interesting but not enough to add them to the project:
 - [`webpack-jarvis`](https://www.npmjs.com/package/webpack-jarvis): Web dashboard with information about the build process
 - [`webpack-monitor`](http://webpackmonitor.com/): Web dashboard with information about the build process. Gives recomendations
 - [`webpack-runtime-analyzer`](https://www.npmjs.com/package/webpack-runtime-analyzer): Very promising web dashboard, the only issue is that doesn't seem to work with Webpack 3

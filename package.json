@@ -24,7 +24,9 @@
     "test": "npm run lint && npm run test-no-lint",
     "posttest": "npm run remove-nyc_output",
     "clean-dist": "shx rm -rf dist",
-    "remove-nyc_output": "shx rm -rf .nyc_output"
+    "remove-nyc_output": "shx rm -rf .nyc_output",
+    "webpack-build-with-stats": "webpack --config ./webpack/webpack.$NODE_ENV.js --profile --json > stats.json",
+    "webpack-create-stats": "npm run clean-dist && cross-env NODE_ENV=production npm run webpack-build-with-stats"
   },
   "nyc": {
     "check-coverage": false,

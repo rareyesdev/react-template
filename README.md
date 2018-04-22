@@ -239,6 +239,22 @@ arrow-body-style should be used with care. Omitting curly braces might look good
 - **`extract-text-webpack-plugin`:**
 We disable CSS extractiion in development to improve build speed (`style-loader` is used instead). Check [this](https://stackoverflow.com/questions/43403603/why-is-style-loader-used-as-a-fallback-with-webpacks-extractsass-plugin) for more
 
+- **Common Chunks:**
+  Splitting the application code into more than one file allows better caching mechanisms. This app contains 3 chunks:
+  - _manifest_: Webpack bootstraping code
+  - _vendor_: All 3rd party libraries
+  - _bundle_: Application code
+
+  > `webpack.HashedModuleIdsPlugin` is used to make sure chunks IDs don't change when other chunks are added
+
+  > Since _manifest_ is small it might be inlined into the HTML file using `html-webpack-inline-chunks-plugin`. This will be opted out for now
+
+  _Additional info:_
+  - [dynamic-vendor-bundling-in-webpack](https://jeremygayed.com/dynamic-vendor-bundling-in-webpack-528993e48aab)
+  - [code-splitting](https://webpack.js.org/guides/code-splitting/)
+  - [commons-chunk-plugin](https://webpack.js.org/plugins/commons-chunk-plugin/)
+  - [caching](https://webpack.js.org/guides/caching/)
+
 - **Embed Small Files:**
 Using `url-loader` we can embed assets such as images, fonts and other files directly into the current file. This means that `url` CSS function or `require`/`import` JS statments will return the `base64` version of the file content instead of returning the file's URL. This feature is enabled in production only because otherwise it would hide some resources form Webpack output during development. This behavior is controlled using a file size so only small files are embeded. Big files will be resolved using `file-loader` and `url`,`require`,`import` will return URLs pointing to the file as ususal
   ```javascript

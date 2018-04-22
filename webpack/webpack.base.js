@@ -28,9 +28,11 @@ const postcssLoader = {
 };
 
 const config = {
-  entry: './src/index.jsx',
+  entry: {
+    bundle: './src/index.jsx',
+  },
   output: {
-    filename: 'bundle__[hash:7].js',
+    filename: '[name]__[chunkhash:7].js',
     path: path.resolve('dist'),
     publicPath: '/'
   },
@@ -103,6 +105,14 @@ const config = {
       template: './src/index.html',
       filename: 'index.html',
       inject: 'body'
+    }),
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: ({ resource }) => /node_modules/.test(resource),
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest'
     }),
     ExtractTextWebpackPluginInstance,
     new webpack.DefinePlugin({

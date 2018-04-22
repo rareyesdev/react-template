@@ -33,6 +33,7 @@ const config = {
   },
   output: {
     filename: '[name]__[chunkhash:7].js',
+    chunkFilename: '[name].[chunkhash:7].js',
     path: path.resolve('dist'),
     publicPath: '/'
   },

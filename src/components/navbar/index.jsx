@@ -49,6 +49,9 @@ class AppNavbar extends React.Component {
                 <AppDropdownItem to="/more/loading-images">Loading Images</AppDropdownItem>
                 <DropdownItem divider />
                 <AppDropdownItem to="/more/tree-shaking">Tree Shaking</AppDropdownItem>
+                <DropdownItem divider />
+                <AppDropdownItem to="/more/code-splitting">Code Splitting</AppDropdownItem>
+                <AppDropdownItem to="/more/code-splitting-preload">Code Splitting Preload</AppDropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem className="d-flex">

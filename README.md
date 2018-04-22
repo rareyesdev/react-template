@@ -41,6 +41,7 @@ The app has basic features just to test the tools in the project
     - [`postcss-loader`](#postcss-loader)
     - [`prop-types`](#prop-types)
     - [`react`,`react-dom`](#reactreact-dom)
+    - [`react-loadable`](#react-loadable)
     - [`react-router-dom`](#react-router-dom)
     - [`reactstrap`](#reactstrap)
     - [`resolve-url-loader`](#resolve-url-loader)
@@ -149,6 +150,9 @@ Runtime type checking for React props
 ### `react`,`react-dom`
 React development
 
+### `react-loadable`
+HOC for easy Code Splitting using Webpack
+
 ### `react-router-dom`
 React client router
 
@@ -254,6 +258,14 @@ We disable CSS extractiion in development to improve build speed (`style-loader`
   - [code-splitting](https://webpack.js.org/guides/code-splitting/)
   - [commons-chunk-plugin](https://webpack.js.org/plugins/commons-chunk-plugin/)
   - [caching](https://webpack.js.org/guides/caching/)
+
+- **Code Splitting:**
+  The app implements code splitting at the module level, this gives granularity control over it. Code splitting should only be neccessary when certain sections of the app grow to big. It should not be abused
+
+  _Additional info:_
+  - [webpack-code-splitting](https://webpack.js.org/guides/code-splitting/)
+  - [react-router-code-splitting](https://reacttraining.com/react-router/web/guides/code-splitting)
+  - [react-loadable](https://github.com/jamiebuilds/react-loadable)
 
 - **Embed Small Files:**
 Using `url-loader` we can embed assets such as images, fonts and other files directly into the current file. This means that `url` CSS function or `require`/`import` JS statments will return the `base64` version of the file content instead of returning the file's URL. This feature is enabled in production only because otherwise it would hide some resources form Webpack output during development. This behavior is controlled using a file size so only small files are embeded. Big files will be resolved using `file-loader` and `url`,`require`,`import` will return URLs pointing to the file as ususal

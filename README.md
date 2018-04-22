@@ -252,7 +252,6 @@ Using `url-loader` we can embed assets such as images, fonts and other files dir
   }
   ```
 
-
 - **Source Maps:**
 `devtool: 'inline-source-map'` in `webpack.config.js` is responsible for enabling source maps. This way we get nice error messages pointing to the real file and not the bundled file
 

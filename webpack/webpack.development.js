@@ -5,6 +5,7 @@ const path = require('path');
 const baseConfig = require('./webpack.base.js');
 
 const config = {
+  mode: 'development',
   module: {
     rules: [
       {

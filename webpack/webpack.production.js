@@ -6,6 +6,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const baseConfig = require('./webpack.base');
 
 const config = {
+  mode: 'production',
   module: {
     rules: [
       {

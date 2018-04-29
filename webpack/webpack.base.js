@@ -4,7 +4,6 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
 const enableWebpackBundlerAnalyzer = process.env.ENABLE_BUNDLE_ANALYZER ? 'server' : 'disabled';
@@ -13,7 +12,7 @@ const extractCss = process.env.NODE_ENV !== 'development';
 const minimizeCss = process.env.NODE_ENV !== 'development';
 
 const ExtractTextWebpackPluginInstance = new ExtractTextWebpackPlugin({
-  filename: 'bundle__[contenthash:7].css',
+  filename: 'bundle__[md5:contenthash:hex:7].css',
   disable: !extractCss
 });
 
@@ -33,9 +32,15 @@ const config = {
   },
   output: {
     filename: '[name]__[chunkhash:7].js',
-    chunkFilename: '[name].[chunkhash:7].js',
+    chunkFilename: '[name]__[chunkhash:7].js',
     path: path.resolve('dist'),
     publicPath: '/'
+  },
+  optimization: {
+    runtimeChunk: true,
+    // splitChunks: {
+    //   chunks: 'all'
+    // }
   },
   module: {
     rules: [
@@ -107,18 +112,7 @@ const config = {
       filename: 'index.html',
       inject: 'body'
     }),
-    new webpack.HashedModuleIdsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: ({ resource }) => /node_modules/.test(resource),
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest'
-    }),
     ExtractTextWebpackPluginInstance,
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    }),
     new BundleAnalyzerPlugin({
       analyzerMode: enableWebpackBundlerAnalyzer
     })

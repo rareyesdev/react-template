@@ -1,10 +1,9 @@
 /* eslint-disable comma-dangle */
 
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
 const enableWebpackBundlerAnalyzer = process.env.ENABLE_BUNDLE_ANALYZER ? 'server' : 'disabled';
@@ -12,9 +11,9 @@ const enableWebpackBundlerAnalyzer = process.env.ENABLE_BUNDLE_ANALYZER ? 'serve
 const extractCss = process.env.NODE_ENV !== 'development';
 const minimizeCss = process.env.NODE_ENV !== 'development';
 
-const ExtractTextWebpackPluginInstance = new ExtractTextWebpackPlugin({
-  filename: 'bundle__[contenthash:7].css',
-  disable: !extractCss
+const ExtractTextWebpackPluginInstance = new MiniCssExtractPlugin({
+  filename: '[name]__[contenthash:7].css',
+  chunkFilename: '[name]__[chunkhash:7].css'
 });
 
 const postcssLoader = {
@@ -33,9 +32,15 @@ const config = {
   },
   output: {
     filename: '[name]__[chunkhash:7].js',
-    chunkFilename: '[name].[chunkhash:7].js',
+    chunkFilename: '[name]__[chunkhash:7].js',
     path: path.resolve('dist'),
     publicPath: '/'
+  },
+  optimization: {
+    runtimeChunk: true,
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   module: {
     rules: [
@@ -52,51 +57,47 @@ const config = {
       // Loads all CSS related to components. Uses CSS Modules
       {
         test: /\.scss$/,
-        use: ExtractTextWebpackPluginInstance.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                importLoaders: 1,
-                sourceMap: true,
-                minimize: minimizeCss,
-                localIdentName: '[name]--[local]'
-              }
-            },
-            postcssLoader,
-            {
-              loader: 'resolve-url-loader'
-            },
-            {
-              loader: 'sass-loader?sourceMap'
+        use: [
+          extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              sourceMap: true,
+              minimize: minimizeCss,
+              localIdentName: '[name]--[local]'
             }
-          ]
-        }),
+          },
+          postcssLoader,
+          {
+            loader: 'resolve-url-loader'
+          },
+          {
+            loader: 'sass-loader?sourceMap'
+          }
+        ],
         include: path.resolve('src'),
         exclude: path.resolve('src', 'styles')
       },
       // Loads all Bootstrap CSS. Disabled CSS Modules
       {
         test: /\.scss$/,
-        use: ExtractTextWebpackPluginInstance.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: false,
-                sourceMap: true,
-                minimize: minimizeCss,
-              }
-            },
-            postcssLoader,
-            {
-              loader: 'sass-loader'
+        use: [
+          extractCss ? MiniCssExtractPlugin.loader : 'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+              sourceMap: true,
+              minimize: minimizeCss,
             }
-          ]
-        }),
+          },
+          postcssLoader,
+          {
+            loader: 'sass-loader'
+          }
+        ],
         include: path.resolve('src', 'styles')
       }
     ]
@@ -107,18 +108,7 @@ const config = {
       filename: 'index.html',
       inject: 'body'
     }),
-    new webpack.HashedModuleIdsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: ({ resource }) => /node_modules/.test(resource),
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest'
-    }),
     ExtractTextWebpackPluginInstance,
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    }),
     new BundleAnalyzerPlugin({
       analyzerMode: enableWebpackBundlerAnalyzer
     })

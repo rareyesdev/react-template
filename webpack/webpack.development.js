@@ -5,6 +5,7 @@ const path = require('path');
 const baseConfig = require('./webpack.base.js');
 
 const config = {
+  mode: 'development',
   module: {
     rules: [
       {
@@ -33,7 +34,7 @@ const config = {
       }
     ]
   },
-  devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
   devServer: {
     contentBase: path.resolve('dist'),
     historyApiFallback: true,

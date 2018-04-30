@@ -13,7 +13,7 @@ const minimizeCss = process.env.NODE_ENV !== 'development';
 
 const ExtractTextWebpackPluginInstance = new MiniCssExtractPlugin({
   filename: '[name]__[contenthash:7].css',
-  chunkFilename: '[name]__CHUNK__[chunkhash:7].css'
+  chunkFilename: '[name]__[chunkhash:7].css'
 });
 
 const postcssLoader = {

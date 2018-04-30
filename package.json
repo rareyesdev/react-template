@@ -46,7 +46,8 @@
     ]
   },
   "browserslist": [
-    "last 2 versions"
+    ">0.25%",
+    "not op_mini all"
   ],
   "dependencies": {
     "autoprefixer": "^8.2.0",

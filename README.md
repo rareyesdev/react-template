@@ -31,9 +31,9 @@ The app has basic features just to test the tools in the project
     - [`cross-env`](#cross-env)
     - [`css-loader`](#css-loader)
     - [`express`](#express)
-    - [`extract-text-webpack-plugin`](#extract-text-webpack-plugin)
     - [`file-loader`](#file-loader)
     - [`html-webpack-plugin`](#html-webpack-plugin)
+    - [`mini-css-extract-plugin`](#mini-css-extract-plugin)
     - [`morgan`](#morgan)
     - [~~`postcss-cssnext`~~](#postcss-cssnext)
     - [~~`postcss-import`~~](#postcss-import)
@@ -49,10 +49,10 @@ The app has basic features just to test the tools in the project
     - [`sass-loader`](#sass-loader)
     - [`shx`](#shx)
     - [`style-loader`](#style-loader)
-    - [`uglifyjs-webpack-plugin`](#uglifyjs-webpack-plugin)
     - [`url-loader`](#url-loader)
     - [`webpack`](#webpack)
     - [`webpack-bundle-analyzer`](#webpack-bundle-analyzer)
+    - [`webpack-cli`](#webpack-cli)
     - [`webpack-merge`](#webpack-merge)
   - [Modules (for development)](#modules-for-development)
     - [`chai`](#chai)
@@ -113,14 +113,14 @@ Webpack loader for `.css` files
 ### `express`
 Server
 
-### `extract-text-webpack-plugin`
-Allows to extract all CSS files to a CSS bundle instead of bundling it with the JS code
-
 ### `file-loader`
 Webpack loader for files `(png|svg|jpg|gif)`
 
 ### `html-webpack-plugin`
 For creating `index.html` automatically from a template file and inject JS and CSS bundles
+
+### `mini-css-extract-plugin`
+Allows to extract all CSS files to a CSS bundle instead of bundling it with the JS code
 
 ### `morgan`
 Logger middleware for Express
@@ -177,9 +177,6 @@ Used for deleting files in a cross-platform manner
 ### `style-loader`
 Adds CSS to the DOM by injecting a `<style>` tag
 
-### `uglifyjs-webpack-plugin`
-Makes JS code smaller using several techniques
-
 ### `url-loader`
 Loads files as `base64` encoded URL. Has `file-loader` as fallback option
 
@@ -188,6 +185,9 @@ Module bundler
 
 ### `webpack-bundle-analyzer`
 Display statistics over a webpack bundle
+
+### `webpack-cli`
+For using webpack from CLI
 
 ### `webpack-merge`
 Merge webpack configuration with ease

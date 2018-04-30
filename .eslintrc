@@ -8,6 +8,11 @@
   "extends": "airbnb",
   "rules": {
     "react/forbid-prop-types": false,
-    "arrow-body-style": 0
+    "arrow-body-style": 0,
+    "jsx-a11y/anchor-is-valid": ["error", {
+      "components": ["Link"],
+      "specialLink": ["to"],
+      "aspects": ["noHref", "invalidHref", "preferButton"]
+    }]
   }
 }

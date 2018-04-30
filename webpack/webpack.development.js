@@ -34,7 +34,7 @@ const config = {
       }
     ]
   },
-  devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
   devServer: {
     contentBase: path.resolve('dist'),
     historyApiFallback: true,

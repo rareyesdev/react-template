@@ -6,10 +6,12 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
-const enableWebpackBundlerAnalyzer = process.env.ENABLE_BUNDLE_ANALYZER ? 'server' : 'disabled';
+const development = process.env.NODE_ENV === 'development';
 
-const extractCss = process.env.NODE_ENV !== 'development';
-const minimizeCss = process.env.NODE_ENV !== 'development';
+const extractCss = !development;
+const minimizeCss = !development;
+
+const enableWebpackBundlerAnalyzer = process.env.ENABLE_BUNDLE_ANALYZER ? 'server' : 'disabled';
 
 const ExtractTextWebpackPluginInstance = new MiniCssExtractPlugin({
   filename: '[name]__[contenthash:7].css',

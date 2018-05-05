@@ -24,6 +24,7 @@ The app has basic features just to test the tools in the project
   - [Eslint](#eslint)
     - [Airbnb Configuration Overrides](#airbnb-configuration-overrides)
   - [Webpack](#webpack)
+    - [Webpack Dev Server](#webpack-dev-server)
     - [Optimizations](#optimizations)
     - [Webpack Bundle Analysis](#webpack-bundle-analysis)
   - [Contribution Guidelines](#contribution-guidelines)
@@ -97,6 +98,9 @@ Using PropTypes.object and PropTypes.array make sense to me. Sometime PropTypes.
 arrow-body-style should be used with care. Omitting curly braces might look good but in the long term it causes a lot of changes when used to create functional components. A lot of times the component needs additional code and we end up changing it to use curly braces. It better to maintain functional component consistent from the beginning. Other uses of inline arrow functions look better if we omit the curly braces
 
 ## Webpack
+
+### Webpack Dev Server
+To make WDS visible to other devices in the network we need to specify `devServer.host` using computer's name/IP. One solution is to use `require('os').hostname().toLowerCase()`
 
 ### Optimizations
 

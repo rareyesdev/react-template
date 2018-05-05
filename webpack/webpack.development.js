@@ -3,6 +3,7 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
+const host = require('os').hostname().toLowerCase();
 const baseConfig = require('./webpack.base.js');
 
 const config = {
@@ -46,6 +47,7 @@ const config = {
   devServer: {
     contentBase: path.resolve('dist'),
     historyApiFallback: true,
+    host: host,
     hot: true,
   }
 };

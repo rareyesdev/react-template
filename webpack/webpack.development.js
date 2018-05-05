@@ -47,9 +47,9 @@ const config = {
   devServer: {
     contentBase: path.resolve('dist'),
     historyApiFallback: true,
-    host: host,
     hot: true,
-  }
+    host,
+  },
 };
 
 module.exports = merge(baseConfig, config);

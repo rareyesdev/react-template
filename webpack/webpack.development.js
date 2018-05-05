@@ -1,5 +1,3 @@
-/* eslint-disable comma-dangle */
-
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
@@ -20,11 +18,11 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name]__[hash:7].[ext]'
-            }
+              name: '[name]__[hash:7].[ext]',
+            },
           },
         ],
-        include: path.resolve('src')
+        include: path.resolve('src'),
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -32,16 +30,16 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name]__[hash:7].[ext]'
-            }
+              name: '[name]__[hash:7].[ext]',
+            },
           },
         ],
-        include: path.resolve('src')
-      }
-    ]
+        include: path.resolve('src'),
+      },
+    ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   devtool: 'eval-source-map',
   devServer: {

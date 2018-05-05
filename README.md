@@ -87,7 +87,6 @@ https://bootstrap.build/app/v4.0/
 https://reactstrap.github.io/
 
 ## Eslint
-> Some rules are manually disabled in configuration files because they might cause issue with their respective parsers (example `eslint-disable comma-dangle` in webpack configuration file)
 
 ### Airbnb Configuration Overrides
 

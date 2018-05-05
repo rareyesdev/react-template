@@ -1,5 +1,3 @@
-/* eslint-disable comma-dangle */
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -15,7 +13,7 @@ const enableWebpackBundlerAnalyzer = process.env.ENABLE_BUNDLE_ANALYZER ? 'serve
 
 const ExtractTextWebpackPluginInstance = new MiniCssExtractPlugin({
   filename: '[name]__[contenthash:7].css',
-  chunkFilename: '[name]__[chunkhash:7].css'
+  chunkFilename: '[name]__[chunkhash:7].css',
 });
 
 const postcssLoader = {
@@ -23,37 +21,37 @@ const postcssLoader = {
   options: {
     sourceMap: true,
     plugins: () => [
-      autoprefixer
-    ]
-  }
+      autoprefixer,
+    ],
+  },
 };
 
 const config = {
   entry: {
     bundle: './src/index.jsx',
-    vendors: './src/styles/bootstrap-overrides.scss'
+    vendors: './src/styles/bootstrap-overrides.scss',
   },
   output: {
     path: path.resolve('dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   optimization: {
     runtimeChunk: true,
     splitChunks: {
-      chunks: 'all'
-    }
+      chunks: 'all',
+    },
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         use: 'babel-loader',
-        include: path.resolve('src')
+        include: path.resolve('src'),
       },
       {
         test: /\.jsx$/,
         use: 'babel-loader',
-        include: path.resolve('src')
+        include: path.resolve('src'),
       },
       // Loads all CSS related to components. Uses CSS Modules
       {
@@ -67,19 +65,19 @@ const config = {
               importLoaders: 1,
               sourceMap: true,
               minimize: minimizeCss,
-              localIdentName: '[name]--[local]'
-            }
+              localIdentName: '[name]--[local]',
+            },
           },
           postcssLoader,
           {
-            loader: 'resolve-url-loader'
+            loader: 'resolve-url-loader',
           },
           {
-            loader: 'sass-loader?sourceMap'
-          }
+            loader: 'sass-loader?sourceMap',
+          },
         ],
         include: path.resolve('src'),
-        exclude: path.resolve('src', 'styles')
+        exclude: path.resolve('src', 'styles'),
       },
       // Loads all Bootstrap CSS. Disabled CSS Modules
       {
@@ -92,33 +90,33 @@ const config = {
               modules: false,
               sourceMap: true,
               minimize: minimizeCss,
-            }
+            },
           },
           postcssLoader,
           {
-            loader: 'sass-loader'
-          }
+            loader: 'sass-loader',
+          },
         ],
-        include: path.resolve('src', 'styles')
-      }
-    ]
+        include: path.resolve('src', 'styles'),
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
       favicon: './src/favicon.ico',
-      inject: 'body'
+      inject: 'body',
     }),
     ExtractTextWebpackPluginInstance,
     new BundleAnalyzerPlugin({
-      analyzerMode: enableWebpackBundlerAnalyzer
-    })
+      analyzerMode: enableWebpackBundlerAnalyzer,
+    }),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
-    symlinks: false
-  }
+    symlinks: false,
+  },
 };
 
 module.exports = config;

@@ -68,6 +68,7 @@ The app has basic features just to test the tools in the project
   - [Modules (for development)](#modules-for-development)
     - [`chai`](#chai)
     - [`eslint` `eslint-config-airbnb` `eslint-plugin-import` `eslint-plugin-jsx-a11y` `eslint-plugin-react`](#eslint-eslint-config-airbnb-eslint-plugin-import-eslint-plugin-jsx-a11y-eslint-plugin-react)
+    - [`husky`](#husky)
     - [`mocha`](#mocha)
     - [`nyc`](#nyc)
     - [`stylelint`](#stylelint)
@@ -310,6 +311,9 @@ Assertion framework. See `expect` usage in example tests
 
 ### `eslint` `eslint-config-airbnb` `eslint-plugin-import` `eslint-plugin-jsx-a11y` `eslint-plugin-react`
 Linter, Airbnb configuration to `eslint` and plugins used by the configuration
+
+### `husky`
+Add pre-commit and pre-push hooks to check linter and tests
 
 ### `mocha`
 Test runner

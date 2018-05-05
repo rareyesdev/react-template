@@ -26,7 +26,9 @@
     "clean-dist": "shx rm -rf dist",
     "remove-nyc_output": "shx rm -rf .nyc_output",
     "webpack-build-with-stats": "webpack --config ./webpack/webpack.$NODE_ENV.js --profile --json > stats.json",
-    "webpack-create-stats": "npm run clean-dist && cross-env NODE_ENV=production npm run webpack-build-with-stats"
+    "webpack-create-stats": "npm run clean-dist && cross-env NODE_ENV=production npm run webpack-build-with-stats",
+    "precommit": "npm run lint",
+    "prepush": "npm test"
   },
   "nyc": {
     "check-coverage": false,
@@ -94,6 +96,7 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.14.3",
     "mocha": "^5.1.0",
     "nyc": "^11.6.0",
     "stylelint": "^9.2.0",

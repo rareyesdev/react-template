@@ -9,7 +9,6 @@ import TreeShakingView from './views/tree-shaking';
 import CodeSplittingViewLoadable from './views/code-splitting/code-splitting-view-loadable';
 import CodeSplittingWithPreloadView from './views/code-splitting-with-preload';
 // import styles from './app.scss';
-import './styles/bootstrap-overrides.scss';
 
 // const cx = classNames.bind(styles);
 

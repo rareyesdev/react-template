@@ -31,6 +31,7 @@ const postcssLoader = {
 const config = {
   entry: {
     bundle: './src/index.jsx',
+    vendors: './src/styles/bootstrap-overrides.scss'
   },
   output: {
     path: path.resolve('dist'),

@@ -240,13 +240,16 @@ arrow-body-style should be used with care. Omitting curly braces might look good
 
 ### Optimizations
 
-- **`extract-text-webpack-plugin`:**
+- **`mini-css-extract-plugin`:**
 We disable CSS extractiion in development to improve build speed (`style-loader` is used instead). Check [this](https://stackoverflow.com/questions/43403603/why-is-style-loader-used-as-a-fallback-with-webpacks-extractsass-plugin) for more
+
+- **Hot Module Replacement:**
+  This allows to update CSS (and also JS but this requires additional effort and is not enabled) wihtout reloading the application. It requires hashing to be [turned of](https://github.com/webpack/webpack-dev-server/issues/377)
 
 - **Common Chunks:**
   Splitting the application code into more than one file allows better caching mechanisms. This app contains 3 chunks:
-  - _manifest_: Webpack bootstraping code
-  - _vendor_: All 3rd party libraries
+  - _runtime~bundle_: Webpack bootstraping code
+  - _vendors~bundle_: All 3rd party libraries
   - _bundle_: Application code
 
   > `webpack.HashedModuleIdsPlugin` is used to make sure chunks IDs don't change when other chunks are added

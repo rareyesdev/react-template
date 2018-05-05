@@ -4,6 +4,7 @@
   a {
     color: inherit !important;
   }
+
   :global(a.active) {
     color: $primary !important;
   }

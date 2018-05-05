@@ -1,5 +1,9 @@
 {
   "extends": "stylelint-config-standard",
+  "ignoreFiles": "src/styles/_variables.scss",
   "rules": {
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": ["global"]
+    }]
   }
 }

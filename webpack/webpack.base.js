@@ -33,8 +33,6 @@ const config = {
     bundle: './src/index.jsx',
   },
   output: {
-    filename: '[name]__[chunkhash:7].js',
-    chunkFilename: '[name]__[chunkhash:7].js',
     path: path.resolve('dist'),
     publicPath: '/'
   },

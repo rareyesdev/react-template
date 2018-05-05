@@ -1,11 +1,16 @@
 /* eslint-disable comma-dangle */
 
+const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base');
 
 const config = {
   mode: 'production',
+  output: {
+    filename: '[name]__[chunkhash:7].js',
+    chunkFilename: '[name]__[chunkhash:7].js',
+  },
   module: {
     rules: [
       {
@@ -38,6 +43,9 @@ const config = {
       }
     ]
   },
+  plugins: [
+    new webpack.HashedModuleIdsPlugin()
+  ],
   devtool: 'source-map',
 };
 

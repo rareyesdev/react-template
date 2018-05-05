@@ -23,6 +23,7 @@ The app has basic features just to test the tools in the project
   - [React Bootstrap](#react-bootstrap)
   - [Eslint](#eslint)
     - [Airbnb Configuration Overrides](#airbnb-configuration-overrides)
+  - [Git](#git)
   - [Webpack](#webpack)
     - [Webpack Dev Server](#webpack-dev-server)
     - [Optimizations](#optimizations)
@@ -96,6 +97,9 @@ Using PropTypes.object and PropTypes.array make sense to me. Sometime PropTypes.
 
 - **`"arrow-body-style": 0`**
 arrow-body-style should be used with care. Omitting curly braces might look good but in the long term it causes a lot of changes when used to create functional components. A lot of times the component needs additional code and we end up changing it to use curly braces. It better to maintain functional component consistent from the beginning. Other uses of inline arrow functions look better if we omit the curly braces
+
+## Git
+Git hooks are enabled for checking JS and CSS against linter rules. Also, it will run tests before pushing
 
 ## Webpack
 

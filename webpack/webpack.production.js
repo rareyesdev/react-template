@@ -12,21 +12,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(png|svg|jpg|gif|ico)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              fallback: 'file-loader',
-              name: '[name]__[hash:7].[ext]',
-            },
-          },
-        ],
-        include: path.resolve('src'),
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(png|svg|jpg|gif|ico|woff|woff2|eot|ttf|otf)$/,
         use: [
           {
             loader: 'url-loader',

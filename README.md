@@ -43,12 +43,11 @@ The app has basic features just to test the tools in the project
     - [`cross-env`](#cross-env)
     - [`css-loader`](#css-loader)
     - [`express`](#express)
+    - [`fast-sass-loader`](#fast-sass-loader)
     - [`file-loader`](#file-loader)
     - [`html-webpack-plugin`](#html-webpack-plugin)
     - [`mini-css-extract-plugin`](#mini-css-extract-plugin)
     - [`morgan`](#morgan)
-    - [~~`postcss-cssnext`~~](#postcss-cssnext)
-    - [~~`postcss-import`~~](#postcss-import)
     - [`node-sass`](#node-sass)
     - [`postcss-loader`](#postcss-loader)
     - [`prop-types`](#prop-types)
@@ -56,9 +55,7 @@ The app has basic features just to test the tools in the project
     - [`react-loadable`](#react-loadable)
     - [`react-router-dom`](#react-router-dom)
     - [`reactstrap`](#reactstrap)
-    - [`resolve-url-loader`](#resolve-url-loader)
     - [`rotating-file-stream`](#rotating-file-stream)
-    - [`sass-loader`](#sass-loader)
     - [`shx`](#shx)
     - [`style-loader`](#style-loader)
     - [`url-loader`](#url-loader)
@@ -76,6 +73,10 @@ The app has basic features just to test the tools in the project
     - [`stylelint`](#stylelint)
     - [`stylelint-config-standard`](#stylelint-config-standard)
     - [`webpack-dev-server`](#webpack-dev-server)
+  - [Modules (deprecated)](#modules-deprecated)
+    - [`postcss-cssnext`](#postcss-cssnext)
+    - [`postcss-import`](#postcss-import)
+    - [`resolve-url-loader`](#resolve-url-loader)
 
 <!-- /TOC -->
 
@@ -230,6 +231,9 @@ Webpack loader for `.css` files
 ### `express`
 Server
 
+### `fast-sass-loader`
+SASS loader for webpack
+
 ### `file-loader`
 Webpack loader for files `(png|svg|jpg|gif)`
 
@@ -242,24 +246,13 @@ Allows to extract all CSS files to a CSS bundle instead of bundling it with the 
 ### `morgan`
 Logger middleware for Express
 
-### ~~`postcss-cssnext`~~
-Parser for [CssNext](http://cssnext.io/features/) syntax
-
-> Replaced in favor of SCSS because Bootstrap gives SCSS files that can be compiled in place. This
-allow us to use the theme SCSS variables everywhere in the app
-
-### ~~`postcss-import`~~
-Allows to `@import './styles/some-file.css'` inside other CSS files
-
-> Not needed anymore since SCSS is now doing all the CSS processing
-
 ### `node-sass`
-Provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass. Required by `sass-loader`
+Provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass. Required by `fast-sass-loader`
 
 ### `postcss-loader`
 ~~Webpack loader for files `.css` files. Used after `css-loader` to plugin `postcss-cssnext` parser~~
 
-Allows to process CSS using several plugins. Used after the CSS is parsed by the `sass-loader` to apply vendor prefixes using `autoprefixer`
+Allows to process CSS using several plugins. Used after the CSS is parsed by the `fast-sass-loader` to apply vendor prefixes using `autoprefixer`
 
 ### `prop-types`
 Runtime type checking for React props
@@ -276,16 +269,8 @@ React client router
 ### `reactstrap`
 React Bootstrap 4 components
 
-### `resolve-url-loader`
-Webpack loader that resolves relative paths in url() statements based on the original source file. This is required so we can specify relative URLs inside SCSS files.
-See [sass-loader problems with url()](https://github.com/webpack-contrib/sass-loader#problems-with-url).
-`resolve-url-loader` requires Source Maps enabled in `sass-loader` to work, then, we also need to enable Source Maps for `postcss-loader` otherwise it will ignore the previous Source Map and a warning will be generated ([postcss-loader source maps](https://github.com/postcss/postcss-loader#sourcemap))
-
 ### `rotating-file-stream`
 Creates a `stream.Writable` to a file which is rotated. Rotation behaviour can be deeply customized
-
-### `sass-loader`
-Loads a Sass/SCSS file and compiles it to CSS
 
 ### `shx`
 Wrapper around ShellJS Unix commands, providing an easy solution for simple Unix-like, cross-platform commands in npm package scripts.
@@ -338,3 +323,22 @@ Standard set of rules for `stylelint`
 
 ### `webpack-dev-server`
 For running the app in development with hot reloading
+
+## Modules (deprecated)
+This section contains documentation for modules that were previously used
+
+### `postcss-cssnext`
+Parser for [CssNext](http://cssnext.io/features/) syntax
+
+> Replaced in favor of SCSS because Bootstrap gives SCSS files that can be compiled in place. This
+allow us to use the theme SCSS variables everywhere in the app
+
+### `postcss-import`
+Allows to `@import './styles/some-file.css'` inside other CSS files
+
+> Not needed anymore since SCSS is now doing all the CSS processing
+
+### `resolve-url-loader`
+Webpack loader that resolves relative paths in url() statements based on the original source file. This is required so we can specify relative URLs inside SCSS files.
+See [sass-loader problems with url()](https://github.com/webpack-contrib/sass-loader#problems-with-url).
+`resolve-url-loader` requires Source Maps enabled in `sass-loader` to work, then, we also need to enable Source Maps for `postcss-loader` otherwise it will ignore the previous Source Map and a warning will be generated ([postcss-loader source maps](https://github.com/postcss/postcss-loader#sourcemap))

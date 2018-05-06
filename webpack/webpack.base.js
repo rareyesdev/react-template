@@ -19,7 +19,6 @@ const ExtractTextWebpackPluginInstance = new MiniCssExtractPlugin({
 const postcssLoader = {
   loader: 'postcss-loader',
   options: {
-    sourceMap: true,
     plugins: () => [
       autoprefixer,
     ],
@@ -70,10 +69,7 @@ const config = {
           },
           postcssLoader,
           {
-            loader: 'resolve-url-loader',
-          },
-          {
-            loader: 'sass-loader?sourceMap',
+            loader: 'fast-sass-loader',
           },
         ],
         include: path.resolve('src'),
@@ -94,7 +90,7 @@ const config = {
           },
           postcssLoader,
           {
-            loader: 'sass-loader',
+            loader: 'fast-sass-loader',
           },
         ],
         include: path.resolve('src', 'styles'),

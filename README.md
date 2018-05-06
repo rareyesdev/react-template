@@ -71,6 +71,7 @@ The app has basic features just to test the tools in the project
     - [`eslint` `eslint-config-airbnb` `eslint-plugin-import` `eslint-plugin-jsx-a11y` `eslint-plugin-react`](#eslint-eslint-config-airbnb-eslint-plugin-import-eslint-plugin-jsx-a11y-eslint-plugin-react)
     - [`husky`](#husky)
     - [`mocha`](#mocha)
+    - [`nodemon`](#nodemon)
     - [`nyc`](#nyc)
     - [`stylelint`](#stylelint)
     - [`stylelint-config-standard`](#stylelint-config-standard)
@@ -321,6 +322,10 @@ Add pre-commit and pre-push hooks to check linter and tests
 
 ### `mocha`
 Test runner
+
+### `nodemon`
+- Restarts webpack-dev-server when webpack's configuration changes in development mode
+- Restarts express server when any file changes in production mode
 
 ### `nyc`
 Istanbul's state of the art command line interface. Reports code coverage in several formats

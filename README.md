@@ -105,7 +105,7 @@ Git hooks are enabled for checking JS and CSS against linter rules. Also, it wil
 ## Webpack
 
 ### Webpack Dev Server
-To make WDS visible to other devices in the network we need to specify `devServer.host` using computer's name/IP. One solution is to use `require('os').hostname().toLowerCase()`
+To make WDS visible to other devices in the network we need to specify `devServer.host` using computer's name/IP. One solution is to use `0.0.0.0` or `require('os').hostname().toLowerCase()` but the last one will not allow opening the page in `localhost`
 
 ### Optimizations
 

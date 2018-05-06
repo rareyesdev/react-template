@@ -68,9 +68,7 @@ const config = {
             },
           },
           postcssLoader,
-          {
-            loader: 'fast-sass-loader',
-          },
+          'fast-sass-loader',
         ],
         include: path.resolve('src'),
         exclude: path.resolve('src', 'styles'),
@@ -89,9 +87,7 @@ const config = {
             },
           },
           postcssLoader,
-          {
-            loader: 'fast-sass-loader',
-          },
+          'fast-sass-loader',
         ],
         include: path.resolve('src', 'styles'),
       },

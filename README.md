@@ -174,6 +174,12 @@ resolve: {
 }
 ```
 
+**Considerations:**
+
+- `purifycss-webpack`: Is an interesting option to remove CSS by scanning code. It's fragile when components use classes by concatenating strings so it's not an option for now
+
+- [Critical Path Rendering](https://survivejs.com/webpack/styling/eliminating-unused-css/#critical-path-rendering): This sounds like a good optimization. At this moment I don't have FOUC (Flash of Unstyled Content), use it if necessary
+
 ### Webpack Bundle Analysis
 The [Official Webpack Analyzer](http://webpack.github.io/analyse/) runs using `stats.json` from `npm run webpack-create-stats`
 

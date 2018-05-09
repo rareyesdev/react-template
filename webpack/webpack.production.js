@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
+const WebpackCritical = require('webpack-critical');
 const baseConfig = require('./webpack.base');
 
 const config = {
@@ -29,6 +30,7 @@ const config = {
   },
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
+    new WebpackCritical(),
   ],
   devtool: 'source-map',
 };

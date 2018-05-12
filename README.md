@@ -178,7 +178,9 @@ resolve: {
 
 - `purifycss-webpack`: Is an interesting option to remove CSS by scanning code. It's fragile when components use classes by concatenating strings so it's not an option for now
 
-- [Critical Path Rendering](https://survivejs.com/webpack/styling/eliminating-unused-css/#critical-path-rendering): This sounds like a good optimization. At this moment I don't have FOUC (Flash of Unstyled Content), use it if necessary
+- [Critical Rendering Path](https://survivejs.com/webpack/styling/eliminating-unused-css/#critical-path-rendering): Working as expected on [critical-rendering-path](https://github.com/ramonrf/react-template/tree/experimental/critical-rendering-path) branch. Not enabled by default because:
+  - This is an expensive operation during build
+  - It doesn't make sense when there is no content generated in the server (No server-side rendering)
 
 ### Webpack Bundle Analysis
 The [Official Webpack Analyzer](http://webpack.github.io/analyse/) runs using `stats.json` from `npm run webpack-create-stats`

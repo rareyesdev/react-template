@@ -21,6 +21,7 @@ The app has basic features just to test the tools in the project
   - [Bootstrap](#bootstrap)
     - [Theming](#theming)
   - [React Bootstrap](#react-bootstrap)
+  - [Server](#server)
   - [Eslint](#eslint)
     - [Airbnb Configuration Overrides](#airbnb-configuration-overrides)
   - [Git](#git)
@@ -39,6 +40,7 @@ The app has basic features just to test the tools in the project
     - [`babel-preset-env`,`babel-preset-react`,`babel-preset-stage-0`](#babel-preset-envbabel-preset-reactbabel-preset-stage-0)
     - [`bootstrap`](#bootstrap)
     - [`classnames`](#classnames)
+    - [`compression`](#compression)
     - [`connect-history-api-fallback`](#connect-history-api-fallback)
     - [`cross-env`](#cross-env)
     - [`css-loader`](#css-loader)
@@ -89,6 +91,13 @@ https://bootstrap.build/app/v4.0/
 ## React Bootstrap
 
 https://reactstrap.github.io/
+
+## Server
+
+In production this app uses an Express server configured to serve files using the static middleware.
+
+- Compression:
+Compression middleware is enabled by default. This setup is enough for most applications; for a high-traffic website in production check [this](https://expressjs.com/en/advanced/best-practice-performance.html#use-gzip-compression)
 
 ## Eslint
 
@@ -226,6 +235,9 @@ Bootstrap 4 UI Framework (full framework with SCSS for compiling locally)
 
 ### `classnames`
 For using CSS Modules inside components. See [bind](https://www.npmjs.com/package/classnames#alternate-bind-version-for-css-modules-)
+
+### `compression`
+Node.js compression middleware. Used by Express for asset compression
 
 ### `connect-history-api-fallback`
 Middleware to proxy requests through a specified index page, useful for Single Page Applications that utilise the HTML5 History API

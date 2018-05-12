@@ -2,6 +2,7 @@
 
 const path = require('path');
 const express = require('express');
+const compression = require('compression');
 const historyApiFallback = require('connect-history-api-fallback');
 const {
   init: initLogger,
@@ -18,6 +19,7 @@ initLogger();
 app.use(fileLoggerMiddleware());
 app.use(consoleLoggerMiddleware());
 app.use(historyApiFallback());
+app.use(compression());
 app.use(express.static(path.resolve('dist')));
 app.set('port', port);
 

@@ -18,7 +18,7 @@
     "webpack-dev-server": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.development.js",
     "start": "nodemon --watch webpack --exec \"npm run webpack-dev-server\"",
     "server": "npm run build-prd && node ./src/server/server.js",
-    "server:watch": "nodemon --watch src --watch webpack --ext js,jsx,scss --exec \"npm run server\"",
+    "server:watch": "nodemon --watch src --watch webpack --ext js,jsx,scss,html,ico,svg,jpg --exec \"npm run server\"",
     "lint": "stylelint \"src/**/*.scss\" & eslint src --ext .jsx,.js",
     "test-no-lint": "npm run remove-nyc_output && cross-env NODE_ENV=test nyc mocha --opts mocha.opts \"src/**/*.test.{js,jsx}\"",
     "test": "npm run lint && npm run test-no-lint",

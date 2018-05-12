@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
-const WebpackCritical = require('webpack-critical');
+const HtmlCriticalPlugin = require('html-critical-webpack-plugin');
 const baseConfig = require('./webpack.base');
 
 const config = {
@@ -30,7 +30,21 @@ const config = {
   },
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
-    new WebpackCritical(),
+    new HtmlCriticalPlugin({
+      base: path.resolve('dist'),
+      src: 'index.html',
+      dest: 'index.html',
+      inline: true,
+      minify: true,
+      extract: true,
+      // width: 375,
+      // height: 565,
+      width: 1280,
+      height: 900,
+      penthouse: {
+        blockJSRequests: false,
+      },
+    }),
   ],
   devtool: 'source-map',
 };

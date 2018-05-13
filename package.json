@@ -10,11 +10,12 @@
     "url": "https://github.com/ramonrf/react-template.git"
   },
   "scripts": {
+    "prebuild": "npm run clean-dist",
     "build": "webpack --config ./webpack/webpack.$NODE_ENV.js",
-    "build-dev": "npm run clean-dist && cross-env NODE_ENV=development npm run build",
-    "build-prd": "npm run clean-dist && cross-env NODE_ENV=production npm run build",
-    "build-analyze-dev": "cross-env ENABLE_BUNDLE_ANALYZER=true npm run build-dev",
-    "build-analyze-prd": "cross-env ENABLE_BUNDLE_ANALYZER=true npm run build-prd",
+    "build-dev": "cross-env NODE_ENV=development npm run build",
+    "build-prd": "cross-env NODE_ENV=production npm run build",
+    "build-dev:analyze": "cross-env ANALYZE_BUNDLE=true npm run build-dev",
+    "build-prd:analyze": "cross-env ANALYZE_BUNDLE=true npm run build-prd",
     "webpack-dev-server": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.development.js",
     "start": "nodemon --watch webpack --exec \"npm run webpack-dev-server\"",
     "server": "npm run build-prd && node ./src/server/server.js",
@@ -91,6 +92,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.11.0",

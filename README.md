@@ -67,6 +67,7 @@ The app has basic features just to test the tools in the project
     - [`webpack-merge`](#webpack-merge)
   - [Modules (for development)](#modules-for-development)
     - [`chai`](#chai)
+    - [`duplicate-package-checker-webpack-plugin`](#duplicate-package-checker-webpack-plugin)
     - [`eslint` `eslint-config-airbnb` `eslint-plugin-import` `eslint-plugin-jsx-a11y` `eslint-plugin-react`](#eslint-eslint-config-airbnb-eslint-plugin-import-eslint-plugin-jsx-a11y-eslint-plugin-react)
     - [`husky`](#husky)
     - [`mocha`](#mocha)
@@ -318,6 +319,9 @@ Merge webpack configuration with ease
 
 ### `chai`
 Assertion framework. See `expect` usage in example tests
+
+### `duplicate-package-checker-webpack-plugin`
+Webpack plugin that warns when your bundle contains multiple versions of the same package
 
 ### `eslint` `eslint-config-airbnb` `eslint-plugin-import` `eslint-plugin-jsx-a11y` `eslint-plugin-react`
 Linter, Airbnb configuration to `eslint` and plugins used by the configuration

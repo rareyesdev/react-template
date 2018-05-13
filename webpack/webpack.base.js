@@ -1,15 +1,21 @@
+const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const development = process.env.NODE_ENV === 'development';
+const analyzeBundle = process.env.ANALYZE_BUNDLE;
 
 const extractCss = !development;
 const minimizeCss = !development;
 
-const enableWebpackBundlerAnalyzer = process.env.ENABLE_BUNDLE_ANALYZER ? 'server' : 'disabled';
+const enableWebpackBundlerAnalyzer = analyzeBundle ? 'server' : 'disabled';
+const configWithDuplicatePackageCheckerPlugin = analyzeBundle
+  ? { plugins: [new DuplicatePackageCheckerPlugin({ verbose: true, emitError: true })] }
+  : {};
 
 const ExtractTextWebpackPluginInstance = new MiniCssExtractPlugin({
   filename: '[name]__[contenthash:7].css',
@@ -111,4 +117,4 @@ const config = {
   },
 };
 
-module.exports = config;
+module.exports = merge(config, configWithDuplicatePackageCheckerPlugin);

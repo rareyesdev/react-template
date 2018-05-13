@@ -11,12 +11,12 @@
   },
   "scripts": {
     "prebuild": "npm run clean-dist",
-    "build": "webpack --config ./webpack/webpack.$NODE_ENV.js",
+    "build": "webpack --config ./webpack/webpack.config.$NODE_ENV.js",
     "build-dev": "cross-env NODE_ENV=development npm run build",
     "build-prd": "cross-env NODE_ENV=production npm run build",
     "build-dev:analyze": "cross-env ANALYZE_BUNDLE=true npm run build-dev",
     "build-prd:analyze": "cross-env ANALYZE_BUNDLE=true npm run build-prd",
-    "webpack-dev-server": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.development.js",
+    "webpack-dev-server": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.development.js",
     "start": "nodemon --watch webpack --exec \"npm run webpack-dev-server\"",
     "server": "npm run build-prd && node ./src/server/server.js",
     "server:watch": "nodemon --watch src --watch webpack --ext js,jsx,scss,html,ico,svg,jpg --exec \"npm run server\"",
@@ -26,7 +26,7 @@
     "posttest": "npm run remove-nyc_output",
     "clean-dist": "shx rm -rf dist",
     "remove-nyc_output": "shx rm -rf .nyc_output",
-    "webpack-build-with-stats": "webpack --config ./webpack/webpack.$NODE_ENV.js --profile --json > stats.json",
+    "webpack-build-with-stats": "webpack --config ./webpack/webpack.config.$NODE_ENV.js --profile --json > stats.json",
     "webpack-create-stats": "npm run clean-dist && cross-env NODE_ENV=production npm run webpack-build-with-stats",
     "precommit": "npm run lint",
     "prepush": "npm test"

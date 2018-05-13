@@ -48,6 +48,7 @@ The app has basic features just to test the tools in the project
     - [`fast-sass-loader`](#fast-sass-loader)
     - [`file-loader`](#file-loader)
     - [`html-webpack-plugin`](#html-webpack-plugin)
+    - [`inline-manifest-webpack-plugin`](#inline-manifest-webpack-plugin)
     - [`mini-css-extract-plugin`](#mini-css-extract-plugin)
     - [`morgan`](#morgan)
     - [`node-sass`](#node-sass)
@@ -260,6 +261,9 @@ Webpack loader for files `(png|svg|jpg|gif)`
 
 ### `html-webpack-plugin`
 For creating `index.html` automatically from a template file and inject JS and CSS bundles
+
+### `inline-manifest-webpack-plugin`
+Inlines Webpack's runtime with a script tag to save an http request. Cause webpack's runtime always change between every build, it's better to split the runtime code out for long-term caching
 
 ### `mini-css-extract-plugin`
 Allows to extract all CSS files to a CSS bundle instead of bundling it with the JS code

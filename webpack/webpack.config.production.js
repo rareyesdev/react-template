@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
+const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
 const baseConfig = require('./webpack.config.base');
 
 const config = {
@@ -29,6 +30,7 @@ const config = {
   },
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
+    new InlineManifestWebpackPlugin('manifest'),
   ],
   devtool: 'source-map',
 };

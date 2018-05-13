@@ -41,7 +41,9 @@ const config = {
     publicPath: '/',
   },
   optimization: {
-    runtimeChunk: true,
+    runtimeChunk: {
+      name: 'manifest',
+    },
     splitChunks: {
       chunks: 'all',
     },

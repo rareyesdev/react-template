@@ -1,13 +1,13 @@
 const webpack = require('webpack');
-const merge = require('webpack-merge');
 const path = require('path');
-const baseConfig = require('./webpack.base.js');
+const merge = require('webpack-merge');
+const baseConfig = require('./webpack.config.base');
 
 const config = {
-  mode: 'development',
+  mode: 'production',
   output: {
-    filename: '[name].js',
-    chunkFilename: '[name].js',
+    filename: '[name]__[chunkhash:7].js',
+    chunkFilename: '[name]__[chunkhash:7].js',
   },
   module: {
     rules: [
@@ -15,8 +15,10 @@ const config = {
         test: /\.(png|svg|jpg|gif|ico|woff|woff2|eot|ttf|otf)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
+              limit: 8192,
+              fallback: 'file-loader',
               name: '[name]__[hash:7].[ext]',
             },
           },
@@ -26,15 +28,9 @@ const config = {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HashedModuleIdsPlugin(),
   ],
-  devtool: 'eval-source-map',
-  devServer: {
-    contentBase: path.resolve('dist'),
-    historyApiFallback: true,
-    hot: true,
-    host: '0.0.0.0',
-  },
+  devtool: 'source-map',
 };
 
 module.exports = merge(baseConfig, config);

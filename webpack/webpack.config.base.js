@@ -4,6 +4,8 @@ const path = require('path');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
+const RemoveSourceWebpackPlugin = require('remove-source-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const development = process.env.NODE_ENV === 'development';
@@ -16,6 +18,8 @@ const enableWebpackBundlerAnalyzer = analyzeBundle ? 'server' : 'disabled';
 const configWithDuplicatePackageCheckerPlugin = analyzeBundle
   ? { plugins: [new DuplicatePackageCheckerPlugin({ verbose: true, emitError: true })] }
   : {};
+
+const bootstrapEntryPointRegex = /bootstrap__[\d\D]*\.js/;
 
 const ExtractTextWebpackPluginInstance = new MiniCssExtractPlugin({
   filename: '[name]__[contenthash:7].css',
@@ -34,7 +38,7 @@ const postcssLoader = {
 const config = {
   entry: {
     bundle: './src/index.jsx',
-    vendors: './src/styles/bootstrap-overrides.scss',
+    bootstrap: './src/styles/bootstrap-overrides.scss',
   },
   output: {
     path: path.resolve('dist'),
@@ -107,7 +111,10 @@ const config = {
       filename: 'index.html',
       favicon: './src/favicon.ico',
       inject: 'body',
+      excludeAssets: [bootstrapEntryPointRegex],
     }),
+    new HtmlWebpackExcludeAssetsPlugin(),
+    new RemoveSourceWebpackPlugin([bootstrapEntryPointRegex]),
     ExtractTextWebpackPluginInstance,
     new BundleAnalyzerPlugin({
       analyzerMode: enableWebpackBundlerAnalyzer,

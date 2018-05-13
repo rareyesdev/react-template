@@ -47,6 +47,7 @@ The app has basic features just to test the tools in the project
     - [`express`](#express)
     - [`fast-sass-loader`](#fast-sass-loader)
     - [`file-loader`](#file-loader)
+    - [`html-webpack-exclude-assets-plugin`](#html-webpack-exclude-assets-plugin)
     - [`html-webpack-plugin`](#html-webpack-plugin)
     - [`inline-manifest-webpack-plugin`](#inline-manifest-webpack-plugin)
     - [`mini-css-extract-plugin`](#mini-css-extract-plugin)
@@ -58,6 +59,7 @@ The app has basic features just to test the tools in the project
     - [`react-loadable`](#react-loadable)
     - [`react-router-dom`](#react-router-dom)
     - [`reactstrap`](#reactstrap)
+    - [`remove-source-webpack-plugin`](#remove-source-webpack-plugin)
     - [`rotating-file-stream`](#rotating-file-stream)
     - [`shx`](#shx)
     - [`style-loader`](#style-loader)
@@ -259,6 +261,9 @@ SASS loader for webpack
 ### `file-loader`
 Webpack loader for files `(png|svg|jpg|gif)`
 
+### `html-webpack-exclude-assets-plugin`
+Enhances `html-webpack-plugin` functionality by adding the `{excludeAssets: RegExp | [RegExp]}` option to allow you to exclude assets. [Issue](https://github.com/webpack/webpack/issues/1967)
+
 ### `html-webpack-plugin`
 For creating `index.html` automatically from a template file and inject JS and CSS bundles
 
@@ -293,6 +298,9 @@ React client router
 
 ### `reactstrap`
 React Bootstrap 4 components
+
+### `remove-source-webpack-plugin`
+A plugin for webpack to remove the source that is not needed. [Issue](https://github.com/jamesjieye/html-webpack-exclude-assets-plugin/issues/9)
 
 ### `rotating-file-stream`
 Creates a `stream.Writable` to a file which is rotated. Rotation behaviour can be deeply customized

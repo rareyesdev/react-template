@@ -30,7 +30,7 @@ const postcssLoader = {
   loader: 'postcss-loader',
   options: {
     plugins: () => [
-      autoprefixer,
+      autoprefixer(),
     ],
   },
 };

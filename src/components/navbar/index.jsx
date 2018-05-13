@@ -48,6 +48,8 @@ class AppNavbar extends React.Component {
                 <AppDropdownItem to="/more/loading-fonts">Loading Additional Fonts</AppDropdownItem>
                 <AppDropdownItem to="/more/loading-images">Loading Images</AppDropdownItem>
                 <DropdownItem divider />
+                <AppDropdownItem to="/more/autoprefixer">Autoprefixer</AppDropdownItem>
+                <DropdownItem divider />
                 <AppDropdownItem to="/more/tree-shaking">Tree Shaking</AppDropdownItem>
                 <DropdownItem divider />
                 <AppDropdownItem to="/more/code-splitting">Code Splitting</AppDropdownItem>

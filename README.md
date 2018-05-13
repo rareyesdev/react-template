@@ -62,7 +62,6 @@ The app has basic features just to test the tools in the project
     - [`style-loader`](#style-loader)
     - [`url-loader`](#url-loader)
     - [`webpack`](#webpack)
-    - [`webpack-bundle-analyzer`](#webpack-bundle-analyzer)
     - [`webpack-cli`](#webpack-cli)
     - [`webpack-merge`](#webpack-merge)
   - [Modules (for development)](#modules-for-development)
@@ -75,6 +74,7 @@ The app has basic features just to test the tools in the project
     - [`nyc`](#nyc)
     - [`stylelint`](#stylelint)
     - [`stylelint-config-standard`](#stylelint-config-standard)
+    - [`webpack-bundle-analyzer`](#webpack-bundle-analyzer)
     - [`webpack-dev-server`](#webpack-dev-server)
   - [Modules (deprecated)](#modules-deprecated)
     - [`postcss-cssnext`](#postcss-cssnext)
@@ -306,9 +306,6 @@ Loads files as `base64` encoded URL. Has `file-loader` as fallback option
 ### `webpack`
 Module bundler
 
-### `webpack-bundle-analyzer`
-Display statistics over a webpack bundle
-
 ### `webpack-cli`
 For using webpack from CLI
 
@@ -344,6 +341,9 @@ Linter for CSS
 
 ### `stylelint-config-standard`
 Standard set of rules for `stylelint`
+
+### `webpack-bundle-analyzer`
+Display webpack bundle statistics
 
 ### `webpack-dev-server`
 For running the app in development with hot reloading

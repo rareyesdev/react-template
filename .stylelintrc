@@ -1,9 +1,58 @@
 {
   "extends": "stylelint-config-standard",
   "ignoreFiles": "src/styles/_variables.scss",
+  "plugins": [
+		"stylelint-order"
+	],
   "rules": {
+    "string-quotes": "double",
+    "selector-attribute-quotes": "always",
+    "selector-class-pattern": "^[a-z-]+$",
     "selector-pseudo-class-no-unknown": [true, {
       "ignorePseudoClasses": ["global"]
-    }]
+    }],
+    "order/properties-order": [
+      [
+        {
+          "properties": [
+            "position",
+            "top",
+            "right",
+            "bottom",
+            "left",
+            "z-index"
+          ]
+        },
+        {
+          "properties": [
+            "display",
+            "float",
+            "width",
+            "height",
+            "margin",
+            "margin-top",
+            "margin-right",
+            "margin-bottom",
+            "margin-left",
+            "padding",
+            "padding-top",
+            "padding-right",
+            "padding-bottom",
+            "padding-left"
+          ]
+        },
+        {
+          "properties": [
+            "font",
+            "line-height",
+            "color",
+            "text-align"
+          ]
+        }
+      ],
+      {
+        "unspecified": "bottomAlphabetical"
+      }
+    ]
   }
 }

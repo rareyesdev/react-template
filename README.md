@@ -24,6 +24,8 @@ The app has basic features just to test the tools in the project
   - [Server](#server)
   - [Eslint](#eslint)
     - [Airbnb Configuration Overrides](#airbnb-configuration-overrides)
+  - [Stylelint](#stylelint)
+    - [Standard Configuration Overrides](#standard-configuration-overrides)
   - [Git](#git)
   - [Webpack](#webpack)
     - [Webpack Dev Server](#webpack-dev-server)
@@ -77,6 +79,7 @@ The app has basic features just to test the tools in the project
     - [`nyc`](#nyc)
     - [`stylelint`](#stylelint)
     - [`stylelint-config-standard`](#stylelint-config-standard)
+    - [`stylelint-order`](#stylelint-order)
     - [`webpack-bundle-analyzer`](#webpack-bundle-analyzer)
     - [`webpack-dev-server`](#webpack-dev-server)
   - [Modules (deprecated)](#modules-deprecated)
@@ -112,6 +115,11 @@ Using PropTypes.object and PropTypes.array make sense to me. Sometime PropTypes.
 
 - **`"arrow-body-style": 0`**
 arrow-body-style should be used with care. Omitting curly braces might look good but in the long term it causes a lot of changes when used to create functional components. A lot of times the component needs additional code and we end up changing it to use curly braces. It better to maintain functional component consistent from the beginning. Other uses of inline arrow functions look better if we omit the curly braces
+
+## Stylelint
+
+### Standard Configuration Overrides
+**Some** CSS conventions where implemented following [this](http://codeguide.co) article.
 
 ## Git
 Git hooks are enabled for checking JS and CSS against linter rules. Also, it will run tests before pushing
@@ -353,6 +361,9 @@ Linter for CSS
 
 ### `stylelint-config-standard`
 Standard set of rules for `stylelint`
+
+### `stylelint-order`
+Set of rules to order CSS property declarations
 
 ### `webpack-bundle-analyzer`
 Display webpack bundle statistics

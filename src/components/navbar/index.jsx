@@ -23,7 +23,7 @@ class AppNavbar extends React.Component {
   }
 
   toggle = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isOpen: !prevState.isOpen,
     }));
   }

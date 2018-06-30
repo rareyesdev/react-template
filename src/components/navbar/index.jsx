@@ -29,12 +29,13 @@ class AppNavbar extends React.Component {
   }
 
   render() {
+    const { isOpen } = this.state;
     const env = process.env.NODE_ENV;
     return (
       <Navbar dark color="primary" expand="md">
         <Brand />
         <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar>
+        <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
               <AppNavLink exact to="/">Home</AppNavLink>

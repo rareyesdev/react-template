@@ -2,13 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Loading(props) {
-  if (props.error) {
+  const { error, timedOut, pastDelay } = props;
+  if (error) {
     // When the loader has errored
     return <div>Failed to load, please refresh the page</div>;
-  } else if (props.timedOut) {
+  }
+  if (timedOut) {
     // When the loader has taken longer than the timeout
     return <div>This is taking too long. Try refreshing the page</div>;
-  } else if (props.pastDelay) {
+  }
+  if (pastDelay) {
     // When the loader has taken longer than the delay
     return <div>Loading...</div>;
   }

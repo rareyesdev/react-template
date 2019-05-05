@@ -1,8 +1,8 @@
 # react-template
 
 <p align="center">
-  <a href="https://travis-ci.org/ramonrf/react-template">
-    <img src="https://travis-ci.org/ramonrf/react-template.svg?branch=develop" alt="Build Status">
+  <a href="https://travis-ci.org/rareyesdev/react-template">
+    <img src="https://travis-ci.org/rareyesdev/react-template.svg?branch=develop" alt="Build Status">
   </a>
 </p>
 

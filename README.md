@@ -1,10 +1,18 @@
-# react-template
+# [⛔️ DEPRECATED] react-template
 
+<p align="center">
+  <a href="http://unmaintained.tech/">
+    <img src="http://unmaintained.tech/badge.svg" alt="No Maintenance Intended">
+  </a>
+</p>
 <p align="center">
   <a href="https://travis-ci.org/rareyesdev/react-template">
     <img src="https://travis-ci.org/rareyesdev/react-template.svg?branch=develop" alt="Build Status">
   </a>
 </p>
+
+## Deprecation note
+This project was an experiment to understand the complexities behind a custom Webpack setup.
 
 ## Description
 This project is meant to contain basic setup for react applications

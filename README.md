@@ -1,4 +1,4 @@
-# [⛔️ DEPRECATED] react-template
+# react-template ⛔️ DEPRECATED
 
 <p align="center">
   <a href="http://unmaintained.tech/">
